@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+header {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #ff8424;
+  font-weight: 700;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #ff8424;
+  font-weight: 700;
+  width: 100%;
+}
+
+footer nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer nav ul li {
+  display: inline;
+}
+
+footer nav ul li a {
+  padding: 8px;
+  color: white;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+.panel-header {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: #ff8424;
+  font-weight: 700;
+}
+
+.wrapper {
+  background-color: white;
+}
+
+form {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-column-gap: 10px;
+}
+
+form div {
+  width: 100%;
+  margin: 0;
+}
+
+form div label {
+  display: block;
+}
+
+form div input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.mini-input {
+  width: 25%;
+}
+
+.error {
+  color: red;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Large Devices */
+@media (min-width: 700px) {
+  .main-content {
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(84, 75, 49, 0.7);
+  }
+  .panel {
+    width: 90%;
+    margin: 10px auto;
+  }
+  form {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Small Devices */
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel {
+    margin: 0 auto;
+  }
+}
