@@ -16,25 +16,107 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: ""
+      abilities: [
+        {
+          name: "strength",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        },
+        {
+          name: "dexterity",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        },
+        {
+          name: "constitution",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        },
+        {
+          name: "intelligence",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        },
+        {
+          name: "wisdom",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        },
+        {
+          name: "charisma",
+          value: {
+            abilityScore: 0,
+            abilityModifier: 0,
+            tempScore: 0,
+            tempModifier: 0
+          }
+        }
+      ]
     };
+
+    this.changeAbility = this.changeAbility.bind(this);
   }
+
+  changeAbility(type, ability, value) {
+    let oldState = this.state.abilities;
+    for (let i = 0; i < oldState.length; i++) {
+      if (oldState[i].name === type) {
+        for (let abilityValue in oldState[i]) {
+          // TODO: SORT THIS OUT!!!!!!
+          if (abilityValue.name === ability) {
+            oldState[i][x].value = value;
+            break;
+          }
+        }
+      }
+    }
+    this.setState({ abilities: oldState });
+  }
+
   render() {
     return (
       <Router>
         <div className="app">
           <header>Pathfinder Character Sheet</header>
           <div className="main-content">
-            <Route exact path="/" component={Summary} />
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Summary {...props} abilities={this.state.abilities} />
+              )}
+            />
             <Route path="/general" component={General} />
-            <Route path="/abilities" component={Abilities} />
-            {/* <Defence toggleDefence />
-        <Offence toggleOffence />
-        <Skills toggleSkills />
-        <Feats toggleFeats />
-        <Equipment toggleEquipment />
-        <Spells toggleSpells />
-        <Notes toggleNotes /> */}
+            <Route
+              path="/abilities"
+              render={props => (
+                <Abilities
+                  {...props}
+                  abilities={this.state.abilities}
+                  changeAbility={this.changeAbility}
+                />
+              )}
+            />
           </div>
           <footer>
             <nav>

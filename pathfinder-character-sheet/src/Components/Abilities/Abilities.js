@@ -12,12 +12,36 @@ class Abilities extends Component {
     return (
       <div className="panel">
         <div className="panel-header">Abilities</div>
-        <Ability name="Strength" />
-        <Ability name="Dexterity" />
-        <Ability name="Constitution" />
-        <Ability name="Intelligence" />
-        <Ability name="Wisdom" />
-        <Ability name="Charisma" />
+        <Ability
+          name="Strength"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
+        <Ability
+          name="Dexterity"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
+        <Ability
+          name="Constitution"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
+        <Ability
+          name="Intelligence"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
+        <Ability
+          name="Wisdom"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
+        <Ability
+          name="Charisma"
+          abilities={this.props.abilities}
+          changeAbility={this.props.changeAbility}
+        />
       </div>
     );
   }
