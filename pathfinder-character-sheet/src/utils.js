@@ -9,23 +9,39 @@ Object.size = function(obj) {
   return size;
 };
 
-export function camelCaseToCapitalisedAndSpaced(str) {
+String.toCamelCase = function(str) {
+  return str
+    .replace(/\s(.)/g, function($1) {
+      return $1.toUpperCase();
+    })
+    .replace(/\s/g, "")
+    .replace(/^(.)/, function($1) {
+      return $1.toLowerCase();
+    });
+};
+
+String.capitalize = function(str) {
+  const finished = str.charAt(0).toUpperCase() + str.substr(1);
+  return finished;
+};
+
+String.camelCaseToCapitalisedAndSpaced = function(str) {
   const camel = str;
   const spaced = camel.replace(/([A-Z])/g, function(g) {
     return " " + g[0].toUpperCase();
   });
-  const finished = spaced.charAt(0).toUpperCase() + spaced.substr(1);
+  const finished = String.capitalize(spaced);
   return finished;
-}
+};
 
 function inputBuilder(array, obj, name) {
   return array.map((item, i) => (
     <div key={i}>
-      <label htmlFor={name + item[0]}>
-        {camelCaseToCapitalisedAndSpaced(item[0])}
+      <label htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}>
+        {String.camelCaseToCapitalisedAndSpaced(item[0])}
       </label>
       <input
-        id={name + item[0]}
+        id={String.toCamelCase(name) + String.capitalize(item[0])}
         value={item[1]}
         onChange={e => (obj[item[0]] = e.target.value)}
       />
