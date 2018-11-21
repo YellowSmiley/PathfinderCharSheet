@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { setupReduxX } from "./reduxx";
 import Summary from "./Components/Summary";
-import General from "./Components/General";
+import General from "./Components/General/General";
 import Abilities from "./Components/Abilities/Abilities";
-// import Defence from "./Components/Defence";
-// import Offence from "./Components/Offence";
-// import Skills from "./Components/Skills";
-// import Feats from "./Components/Feats";
-// import Equipment from "./Components/Equipment";
-// import Spells from "./Components/Spells";
-// import Notes from "./Components/Notes";
+import Defence from "./Components/Defence/Defence";
+import Offence from "./Components/Offence/Offence";
+import Skills from "./Components/Skills/Skills";
+import Feats from "./Components/Feats/Feats";
+import Equipment from "./Components/Equipment/Equipment";
+import Spells from "./Components/Spells/Spells";
+import Notes from "./Components/Notes/Notes";
 import "./App.css";
 
 class App extends Component {
@@ -19,7 +18,6 @@ class App extends Component {
     this.state = {
       test: ""
     };
-    setupReduxX(this);
   }
 
   render() {
@@ -28,33 +26,16 @@ class App extends Component {
         <div className="app">
           <header>Pathfinder Character Sheet</header>
           <div className="main-content">
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Summary {...props} abilities={this.state.abilities} />
-              )}
-            />
-            <Route
-              path="/general"
-              render={props => (
-                <General
-                  {...props}
-                  general={this.state.general}
-                  handleAbilitiesChange={this.handleAbilitiesChange}
-                />
-              )}
-            />
-            <Route
-              path="/abilities"
-              render={props => (
-                <Abilities
-                  {...props}
-                  abilities={this.state.abilities}
-                  handleAbilitiesChange={this.handleAbilitiesChange}
-                />
-              )}
-            />
+            <Route exact path="/" component={Summary} />
+            <Route path="/general" component={General} />
+            <Route path="/abilities" component={Abilities} />
+            <Route path="/defence" component={Defence} />
+            <Route path="/offence" component={Offence} />
+            <Route path="/skills" component={Skills} />
+            <Route path="/feats" component={Feats} />
+            <Route path="/equipment" component={Equipment} />
+            <Route path="/spells" component={Spells} />
+            <Route path="/notes" component={Notes} />
           </div>
           <footer>
             <nav>
@@ -66,7 +47,31 @@ class App extends Component {
                   <Link to="/general">General</Link>
                 </li>
                 <li>
-                  <Link to="/abilities/">Abilities</Link>
+                  <Link to="/abilities">Abilities</Link>
+                </li>
+                <li>
+                  <Link to="/defence">Defence</Link>
+                </li>
+                <li>
+                  <Link to="/offence">Offence</Link>
+                </li>
+                <li>
+                  <Link to="/defence">Defence</Link>
+                </li>
+                <li>
+                  <Link to="/skills">Skills</Link>
+                </li>
+                <li>
+                  <Link to="/feats">Feats</Link>
+                </li>
+                <li>
+                  <Link to="/equipment">Equipment</Link>
+                </li>
+                <li>
+                  <Link to="/spells">Spells</Link>
+                </li>
+                <li>
+                  <Link to="/notes">Notes</Link>
                 </li>
               </ul>
             </nav>
