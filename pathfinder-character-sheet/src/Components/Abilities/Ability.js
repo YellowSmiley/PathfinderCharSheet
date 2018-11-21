@@ -115,7 +115,7 @@ function handleAbilitiesChange(type, abilityValue, value) {
     default:
       return false;
   }
-  ReduxX.setState({ abilities: newAbilities });
+  reduxX.setState({ abilities: newAbilities });
 }
 
 class Ability extends Component {

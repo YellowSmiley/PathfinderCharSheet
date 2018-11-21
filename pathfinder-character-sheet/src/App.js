@@ -17,66 +17,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      abilities: [
-        {
-          name: "strength",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        },
-        {
-          name: "dexterity",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        },
-        {
-          name: "constitution",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        },
-        {
-          name: "intelligence",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        },
-        {
-          name: "wisdom",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        },
-        {
-          name: "charisma",
-          value: {
-            abilityScore: 0,
-            abilityModifier: 0,
-            tempScore: 0,
-            tempModifier: 0
-          }
-        }
-      ]
+      test: ""
     };
-
-    this.handleAbilitiesChange = this.handleAbilitiesChange.bind(this);
-
     setupReduxX(this);
   }
 
