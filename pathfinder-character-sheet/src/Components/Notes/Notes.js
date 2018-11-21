@@ -1,15 +1,30 @@
 import React, { Component } from "react";
+import { observer } from "mobx-react";
+import obsNotes from "./obsNotes";
 
-class Summary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: ""
-    };
+const Notes = observer(
+  class Notes extends Component {
+    render() {
+      return (
+        <div className="panel">
+          <div className="panel-header">Notes</div>
+          <div className="wrapper">
+            <form>
+              <div>
+                <label htmlFor="notes">Notes</label>
+                <textarea
+                  id="notes"
+                  rows="4"
+                  value={obsNotes.notes}
+                  onChange={e => (obsNotes.notes = e.target.value)}
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      );
+    }
   }
-  render() {
-    return <div className="App">asdsad</div>;
-  }
-}
+);
 
-export default Summary;
+export default Notes;

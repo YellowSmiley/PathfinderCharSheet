@@ -15,8 +15,10 @@ const Equipment = observer(
               {mapObjectToInputs(obsEquipment.money, "Armour Class")}
               <p>AC Items</p>
               {mapArrayOfObjectsToInputs(obsEquipment.acItem, "AC Items")}
+              {/*TODO: Add ability to add items to obsEquipment.acItem*/}
               <p>Gear</p>
               {mapArrayOfObjectsToInputs(obsEquipment.gear, "Gear")}
+              {/*TODO: Add ability to add items to obsEquipment.gear*/}
             </form>
           </div>
         </div>

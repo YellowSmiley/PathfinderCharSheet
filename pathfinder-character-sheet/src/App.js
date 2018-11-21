@@ -56,9 +56,6 @@ class App extends Component {
                   <Link to="/offence">Offence</Link>
                 </li>
                 <li>
-                  <Link to="/defence">Defence</Link>
-                </li>
-                <li>
                   <Link to="/skills">Skills</Link>
                 </li>
                 <li>
