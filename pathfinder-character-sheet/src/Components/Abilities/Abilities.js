@@ -14,33 +14,33 @@ class Abilities extends Component {
         <div className="panel-header">Abilities</div>
         <Ability
           name="Strength"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.strength}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
         <Ability
           name="Dexterity"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.dexterity}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
         <Ability
           name="Constitution"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.constitution}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
         <Ability
           name="Intelligence"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.intelligence}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
         <Ability
           name="Wisdom"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.wisdom}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
         <Ability
           name="Charisma"
-          abilities={this.props.abilities}
-          changeAbility={this.props.changeAbility}
+          abilityValues={this.props.abilities.charisma}
+          handleAbilitiesChange={this.props.handleAbilitiesChange}
         />
       </div>
     );

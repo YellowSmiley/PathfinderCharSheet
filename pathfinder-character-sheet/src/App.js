@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { setupReduxX } from "./reduxx";
 import Summary from "./Components/Summary";
 import General from "./Components/General";
 import Abilities from "./Components/Abilities/Abilities";
@@ -74,23 +75,9 @@ class App extends Component {
       ]
     };
 
-    this.changeAbility = this.changeAbility.bind(this);
-  }
+    this.handleAbilitiesChange = this.handleAbilitiesChange.bind(this);
 
-  changeAbility(type, ability, value) {
-    let oldState = this.state.abilities;
-    for (let i = 0; i < oldState.length; i++) {
-      if (oldState[i].name === type) {
-        for (let abilityValue in oldState[i]) {
-          // TODO: SORT THIS OUT!!!!!!
-          if (abilityValue.name === ability) {
-            oldState[i][x].value = value;
-            break;
-          }
-        }
-      }
-    }
-    this.setState({ abilities: oldState });
+    setupReduxX(this);
   }
 
   render() {
@@ -106,14 +93,23 @@ class App extends Component {
                 <Summary {...props} abilities={this.state.abilities} />
               )}
             />
-            <Route path="/general" component={General} />
+            <Route
+              path="/general"
+              render={props => (
+                <General
+                  {...props}
+                  general={this.state.general}
+                  handleAbilitiesChange={this.handleAbilitiesChange}
+                />
+              )}
+            />
             <Route
               path="/abilities"
               render={props => (
                 <Abilities
                   {...props}
                   abilities={this.state.abilities}
-                  changeAbility={this.changeAbility}
+                  handleAbilitiesChange={this.handleAbilitiesChange}
                 />
               )}
             />

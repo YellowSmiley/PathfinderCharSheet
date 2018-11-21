@@ -1,4 +1,122 @@
 import React, { Component } from "react";
+import { reduxX } from "../../reduxx";
+
+function handleAbilitiesChange(type, abilityValue, value) {
+  let newAbilities = this.state.abilities;
+  switch (type) {
+    case "strength":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.strength.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.strength.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.strength.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.strength.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    case "dexterity":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.dexterity.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.dexterity.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.dexterity.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.dexterity.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    case "constitution":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.constitution.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.constitution.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.constitution.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.constitution.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    case "intelligence":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.intelligence.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.intelligence.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.intelligence.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.intelligence.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    case "wisdom":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.wisdom.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.wisdom.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.wisdom.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.wisdom.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    case "charisma":
+      switch (abilityValue) {
+        case "abilityScore":
+          newAbilities.charisma.abilityScore = value;
+          break;
+        case "abilityModifier":
+          newAbilities.charisma.abilityModifier = value;
+          break;
+        case "tempScore":
+          newAbilities.charisma.tempScore = value;
+          break;
+        case "tempModifier":
+          newAbilities.charisma.tempModifier = value;
+          break;
+        default:
+          return false;
+      }
+      break;
+    default:
+      return false;
+  }
+  ReduxX.setState({ abilities: newAbilities });
+}
 
 class Ability extends Component {
   constructor(props) {
@@ -12,13 +130,6 @@ class Ability extends Component {
   }
 
   render() {
-    let formAbility = [];
-    for (let i = 0; i < this.props.abilities.length; i++) {
-      if (this.props.abilities[i].name === this.props.name.toLowerCase()) {
-        formAbility = this.props.abilities[i].value;
-        break;
-      }
-    }
     return (
       <div>
         <p>{this.props.name}</p>
@@ -28,9 +139,17 @@ class Ability extends Component {
               <label htmlFor="abilityScore">Ability Score</label>
               <input
                 id="abilityScore"
-                value={formAbility[0].value}
+                value={reduxX.getState(
+                  "abilities",
+                  this.props.name.toLowerCase(),
+                  "abilityScore"
+                )}
                 onChange={e =>
-                  this.handleChangeAbility(e.target.value, "abilityModifier")
+                  handleAbilitiesChange(
+                    this.props.name.toLowerCase(),
+                    "abilityScore",
+                    e.target.value
+                  )
                 }
               />
             </div>
@@ -38,9 +157,17 @@ class Ability extends Component {
               <label htmlFor="abilityModifier">Ability Modifier</label>
               <input
                 id="abilityModifier"
-                value={formAbility[1].value}
+                value={reduxX.getState(
+                  "abilities",
+                  this.props.name.toLowerCase(),
+                  "abilityModifier"
+                )}
                 onChange={e =>
-                  this.handleChangeAbility(e.target.value, "abilityModifier")
+                  handleAbilitiesChange(
+                    this.props.name.toLowerCase(),
+                    "abilityModifier",
+                    e.target.value
+                  )
                 }
               />
             </div>
@@ -48,9 +175,17 @@ class Ability extends Component {
               <label htmlFor="tempScore">Temp Score</label>
               <input
                 id="tempScore"
-                value={formAbility[2].value}
+                value={reduxX.getState(
+                  "abilities",
+                  this.props.name.toLowerCase(),
+                  "tempScore"
+                )}
                 onChange={e =>
-                  this.handleChangeAbility(e.target.value, "abilityModifier")
+                  handleAbilitiesChange(
+                    this.props.name.toLowerCase(),
+                    "tempScore",
+                    e.target.value
+                  )
                 }
               />
             </div>
@@ -58,9 +193,17 @@ class Ability extends Component {
               <label htmlFor="tempModifier">Temp Modifier</label>
               <input
                 id="tempModifier"
-                value={formAbility[3].value}
+                value={reduxX.getState(
+                  "abilities",
+                  this.props.name.toLowerCase(),
+                  "tempModifier"
+                )}
                 onChange={e =>
-                  this.handleChangeAbility(e.target.value, "abilityModifier")
+                  handleAbilitiesChange(
+                    this.props.name.toLowerCase(),
+                    "tempModifier",
+                    e.target.value
+                  )
                 }
               />
             </div>
