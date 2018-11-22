@@ -60,39 +60,38 @@ const Skills = observer(
               {mapObjectToInputs(obsSkills.spellcraft, "Spellcraft")}
               <p>Stealth</p>
               {mapObjectToInputs(obsSkills.stealth, "Stealth")}
+              <p>Survival</p>
+              {mapObjectToInputs(obsSkills.survival, "Survival")}
+              <p>Swim</p>
+              {mapObjectToInputs(obsSkills.swim, "Swim")}
+              <p>Use Magic Device</p>
+              {mapObjectToInputs(obsSkills.useMagicDevice, "Use Magic Device")}
               <div>
-                <label htmlFor="baseAttackBonus">Base Attack Bonus</label>
-                <input
-                  id="baseAttackBonus"
-                  value={obsSkills.baseAttackBonus}
-                  onChange={e => (obsSkills.baseAttackBonus = e.target.value)}
-                />
-              </div>
-              <div>
-                <label htmlFor="conditionalModifiers">
-                  Conditional Modifiers
+                <label htmlFor="conditionalModifiersAndOtherNotes">
+                  Conditional Modifiers &amp; Other Notes
                 </label>
                 <input
-                  id="conditionalModifiers"
-                  value={obsSkills.conditionalModifiers}
+                  id="conditionalModifiersAndOtherNotes"
+                  value={obsSkills.conditionalModifiersAndOtherNotes}
                   onChange={e =>
-                    (obsSkills.conditionalModifiers = e.target.value)
+                    (obsSkills.conditionalModifiersAndOtherNotes =
+                      e.target.value)
                   }
                 />
               </div>
-              <p>Speed (Land)</p>
-              {mapObjectToInputs(obsSkills.speedLand, "Speed Land")}
-              <p>Combat Manoeuvre Bonus</p>
+              <div>
+                <label htmlFor="languages">Languages</label>
+                <input
+                  id="languages"
+                  value={obsSkills.languages}
+                  onChange={e => (obsSkills.languages = e.target.value)}
+                />
+              </div>
+              <p>Experience Points</p>
               {mapObjectToInputs(
-                obsSkills.combatManoeuvreBonus,
-                "Combat Manoeuvre Bonus"
+                obsSkills.experiencePoints,
+                "Experience Points"
               )}
-              <p>Melee Attacks</p>
-              {mapArrayOfObjectsToInputs(
-                obsSkills.meleeAttacks,
-                "Melee Attacks"
-              )}
-              {/*TODO: Add ability to add items to obsSkills.meleeAttacks*/}
             </form>
           </div>
         </div>
