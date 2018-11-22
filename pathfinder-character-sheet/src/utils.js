@@ -63,14 +63,14 @@ export function mapObjectToInputs(obj, name) {
 }
 
 export function mapArrayOfObjectsToInputs(array, name) {
-  let inputs = null;
-  for (let i = 0; i < array.length; i++) {
-    inputs = inputBuilder(
-      Object.entries(array[i]),
-      array[i],
-      stringNoWhiteSpace(name)
-    );
-  }
-
+  let inputs = array.map((item, i) =>
+    inputBuilder(Object.entries(array[i]), array[i], stringNoWhiteSpace(name))
+  );
   return inputs;
+}
+
+export function addObjToArray(obj, array) {
+  let newArray = array;
+  newArray.push(obj);
+  array = newArray;
 }

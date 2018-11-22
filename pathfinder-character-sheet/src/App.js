@@ -13,13 +13,6 @@ import Notes from "./Components/Notes/Notes";
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: ""
-    };
-  }
-
   render() {
     return (
       <Router>
