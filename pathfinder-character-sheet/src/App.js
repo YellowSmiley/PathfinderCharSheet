@@ -10,6 +10,7 @@ import Feats from "./Components/Feats/Feats";
 import Equipment from "./Components/Equipment/Equipment";
 import Spells from "./Components/Spells/Spells";
 import Notes from "./Components/Notes/Notes";
+import Modal from "./Components/Modal/Modal";
 import "./App.css";
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path="/spells" component={Spells} />
             <Route path="/notes" component={Notes} />
           </div>
+          <Modal />
           <footer>
             <nav>
               <ul>

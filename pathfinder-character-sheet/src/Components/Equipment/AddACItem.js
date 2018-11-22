@@ -30,11 +30,59 @@ class AddACItem extends Component {
         <div className="wrapper">
           <form>
             <div>
-              <label htmlFor="name">name</label>
+              <label htmlFor="name">Name</label>
               <input
                 id="name"
                 value={this.state.name}
                 onChange={e => this.setState({ name: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="bonus">Bonus</label>
+              <input
+                id="bonus"
+                value={this.state.bonus}
+                onChange={e => this.setState({ bonus: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="type">Type</label>
+              <input
+                id="type"
+                value={this.state.type}
+                onChange={e => this.setState({ type: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="name">Check Penalty</label>
+              <input
+                id="checkPenalty"
+                value={this.state.checkPenalty}
+                onChange={e => this.setState({ checkPenalty: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="spellFailure">Spell Failure</label>
+              <input
+                id="spellFailure"
+                value={this.state.spellFailure}
+                onChange={e => this.setState({ spellFailure: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="weight">Weight</label>
+              <input
+                id="weight"
+                value={this.state.weight}
+                onChange={e => this.setState({ weight: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="properties">Properties</label>
+              <input
+                id="properties"
+                value={this.state.properties}
+                onChange={e => this.setState({ properties: e.target.value })}
               />
             </div>
           </form>

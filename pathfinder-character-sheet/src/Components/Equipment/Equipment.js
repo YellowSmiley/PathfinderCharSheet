@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsEquipment from "./obsEquipment";
 import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
-import Modal from "../Modal/Modal";
+import ModalButton from "../Modal/ModalButton";
 import AddACItem from "./AddACItem";
 
 const Equipment = observer(
@@ -17,10 +17,10 @@ const Equipment = observer(
               {mapObjectToInputs(obsEquipment.money, "Armour Class")}
               <p>AC Items</p>
               {mapArrayOfObjectsToInputs(obsEquipment.acItem, "AC Items")}
-              <Modal modalBtnText="Add AC Item">
-                <AddACItem />
-              </Modal>
-              {/*TODO: Add ability to add items to obsEquipment.acItem*/}
+              <ModalButton
+                modalBtnText="Add AC Item"
+                modalBody={<AddACItem />}
+              />
               <p>Gear</p>
               {mapArrayOfObjectsToInputs(obsEquipment.gear, "Gear")}
               {/*TODO: Add ability to add items to obsEquipment.gear*/}

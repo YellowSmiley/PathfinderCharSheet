@@ -41,14 +41,6 @@ const Modal = observer(
     render() {
       return (
         <>
-          <button
-            type="submit"
-            onClick={e => {
-              this.onShowClick(e);
-            }}
-          >
-            {this.props.modalBtnText}
-          </button>
           <div className={obsModal.show ? "modal" : "hidden"}>
             <div className="modal-content" ref={this.setWrapperRef}>
               <button
@@ -60,7 +52,7 @@ const Modal = observer(
               >
                 &times;
               </button>
-              {this.props.children}
+              {obsModal.body}
             </div>
           </div>
         </>
