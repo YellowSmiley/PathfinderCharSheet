@@ -63,7 +63,7 @@ export function mapObjectToInputs(obj, name) {
 }
 
 export function mapArrayOfObjectsToInputs(array, name) {
-  let inputs = array.map((item, i) =>
+  const inputs = array.map((item, i) =>
     inputBuilder(Object.entries(array[i]), array[i], stringNoWhiteSpace(name))
   );
   return inputs;
