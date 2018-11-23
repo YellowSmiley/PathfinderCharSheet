@@ -3,23 +3,22 @@ import { addObjToArray } from "../../utils";
 import obsModal from "../Modal/obsModal";
 import obsEquipment from "./obsEquipment";
 
-class AddACItem extends Component {
+class AddGear extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
-      bonus: 0,
       type: "",
-      checkPenalty: 0,
-      spellFailure: 0,
+      location: "",
+      quantity: 0,
       weight: 0,
-      properties: ""
+      notes: ""
     };
   }
 
   onAddClick(e) {
     e.preventDefault();
-    addObjToArray(this.state, obsEquipment.acItem);
+    addObjToArray(this.state, obsEquipment.gear);
     obsModal.show = !obsModal.show;
   }
 
@@ -38,14 +37,6 @@ class AddACItem extends Component {
               />
             </div>
             <div>
-              <label htmlFor="bonus">Bonus</label>
-              <input
-                id="bonus"
-                value={this.state.bonus}
-                onChange={e => this.setState({ bonus: e.target.value })}
-              />
-            </div>
-            <div>
               <label htmlFor="type">Type</label>
               <input
                 id="type"
@@ -54,19 +45,19 @@ class AddACItem extends Component {
               />
             </div>
             <div>
-              <label htmlFor="checkPenalty">Check Penalty</label>
+              <label htmlFor="location">Location</label>
               <input
-                id="checkPenalty"
-                value={this.state.checkPenalty}
-                onChange={e => this.setState({ checkPenalty: e.target.value })}
+                id="location"
+                value={this.state.location}
+                onChange={e => this.setState({ location: e.target.value })}
               />
             </div>
             <div>
-              <label htmlFor="spellFailure">Spell Failure</label>
+              <label htmlFor="quantity">Quantity</label>
               <input
-                id="spellFailure"
-                value={this.state.spellFailure}
-                onChange={e => this.setState({ spellFailure: e.target.value })}
+                id="quantity"
+                value={this.state.quantity}
+                onChange={e => this.setState({ quantity: e.target.value })}
               />
             </div>
             <div>
@@ -78,11 +69,11 @@ class AddACItem extends Component {
               />
             </div>
             <div>
-              <label htmlFor="properties">Properties</label>
+              <label htmlFor="notes">Notes</label>
               <input
-                id="properties"
-                value={this.state.properties}
-                onChange={e => this.setState({ properties: e.target.value })}
+                id="notes"
+                value={this.state.notes}
+                onChange={e => this.setState({ notes: e.target.value })}
               />
             </div>
           </form>
@@ -101,4 +92,4 @@ class AddACItem extends Component {
   }
 }
 
-export default AddACItem;
+export default AddGear;

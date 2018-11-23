@@ -7,27 +7,8 @@ const obsEquipment = observable({
     gold: 0,
     platinum: 0
   },
-  acItem: [
-    {
-      name: "",
-      bonus: 0,
-      type: "",
-      checkPenalty: 0,
-      spellFailure: 0,
-      weight: 0,
-      properties: ""
-    }
-  ],
-  gear: [
-    {
-      name: "",
-      type: "",
-      location: "",
-      quantity: 0,
-      weight: 0,
-      notes: ""
-    }
-  ]
+  acItem: [],
+  gear: []
 });
 
 export default obsEquipment;

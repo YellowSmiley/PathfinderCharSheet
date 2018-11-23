@@ -51,18 +51,7 @@ const obsSpells = observable({
   },
   conditionalModifiers: 0,
   speciality: "",
-  spell: [
-    {
-      name: "",
-      level: 0,
-      school: "",
-      subSchool: "",
-      perDay: 0,
-      used: 0,
-      notes: "",
-      description: ""
-    }
-  ]
+  spell: []
 });
 
 export default obsSpells;

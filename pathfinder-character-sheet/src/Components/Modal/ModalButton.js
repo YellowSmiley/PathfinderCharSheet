@@ -13,6 +13,7 @@ const ModalButton = observer(
       e.preventDefault();
       obsModal.show = !obsModal.show;
       obsModal.body = this.props.modalBody;
+      obsModal.modalBtnText = this.props.modalBtnText;
     }
 
     render() {

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsSkills from "./obsSkills";
 import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import ModalButton from "../Modal/ModalButton";
+import AddSkill from "./AddSkill";
 
 const Skills = observer(
   class Skills extends Component {
@@ -39,17 +41,26 @@ const Skills = observer(
               {mapObjectToInputs(obsSkills.intimidate, "Intimidate")}
               <p>Knowledge</p>
               {mapArrayOfObjectsToInputs(obsSkills.knowledge, "Knowledge")}
-              {/*TODO: Add ability to add items to obsSkills.knowledge*/}
+              <ModalButton
+                modalBtnText="Add Knowledge"
+                modalBody={<AddSkill array={obsSkills.knowledge} />}
+              />
               <p>Linguistics</p>
               {mapObjectToInputs(obsSkills.linguistics, "Linguistics")}
               <p>Perception</p>
               {mapObjectToInputs(obsSkills.perception, "Perception")}
               <p>Perform</p>
               {mapArrayOfObjectsToInputs(obsSkills.perform, "Perform")}
-              {/*TODO: Add ability to add items to obsSkills.perform*/}
+              <ModalButton
+                modalBtnText="Add Perform"
+                modalBody={<AddSkill array={obsSkills.perform} />}
+              />
               <p>Profession</p>
               {mapArrayOfObjectsToInputs(obsSkills.profession, "Profession")}
-              {/*TODO: Add ability to add items to obsSkills.profession*/}
+              <ModalButton
+                modalBtnText="Add Profession"
+                modalBody={<AddSkill array={obsSkills.profession} />}
+              />
               <p>Ride</p>
               {mapObjectToInputs(obsSkills.ride, "Ride")}
               <p>Sense Motive</p>

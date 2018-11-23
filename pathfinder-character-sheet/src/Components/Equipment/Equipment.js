@@ -4,6 +4,7 @@ import obsEquipment from "./obsEquipment";
 import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddACItem from "./AddACItem";
+import AddGear from "./AddGear";
 
 const Equipment = observer(
   class Equipment extends Component {
@@ -23,7 +24,7 @@ const Equipment = observer(
               />
               <p>Gear</p>
               {mapArrayOfObjectsToInputs(obsEquipment.gear, "Gear")}
-              {/*TODO: Add ability to add items to obsEquipment.gear*/}
+              <ModalButton modalBtnText="Add Gear" modalBody={<AddGear />} />
             </form>
           </div>
         </div>

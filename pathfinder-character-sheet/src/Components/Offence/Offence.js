@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsOffence from "./obsOffence";
 import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import ModalButton from "../Modal/ModalButton";
+import AddMeleeAttack from "./AddMeleeAttack";
 
 const Offence = observer(
   class Offence extends Component {
@@ -45,7 +47,10 @@ const Offence = observer(
                 obsOffence.meleeAttacks,
                 "Melee Attacks"
               )}
-              {/*TODO: Add ability to add items to obsOffence.meleeAttacks*/}
+              <ModalButton
+                modalBtnText="Add AC Item"
+                modalBody={<AddMeleeAttack />}
+              />
             </form>
           </div>
         </div>

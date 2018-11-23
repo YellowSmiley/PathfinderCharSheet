@@ -2,7 +2,7 @@ import { observable } from "mobx";
 
 const obsSkills = observable({
   acrobatics: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -15,7 +15,7 @@ const obsSkills = observable({
     misc: 0
   },
   appraise: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -28,7 +28,7 @@ const obsSkills = observable({
     misc: 0
   },
   bluff: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -41,7 +41,7 @@ const obsSkills = observable({
     misc: 0
   },
   climb: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -53,23 +53,9 @@ const obsSkills = observable({
     trait: 0,
     misc: 0
   },
-  craft: [
-    {
-      classSkill: 0,
-      name: "",
-      description: "",
-      total: 0,
-      abilityModifierType: "",
-      abilityModifier: 0,
-      ranks: 0,
-      class: 0,
-      racial: 0,
-      trait: 0,
-      misc: 0
-    }
-  ],
+  craft: [],
   diplomacy: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -82,7 +68,7 @@ const obsSkills = observable({
     misc: 0
   },
   disableDevice: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -95,7 +81,7 @@ const obsSkills = observable({
     misc: 0
   },
   disguise: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -108,7 +94,7 @@ const obsSkills = observable({
     misc: 0
   },
   escapeArtist: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -121,7 +107,7 @@ const obsSkills = observable({
     misc: 0
   },
   fly: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -134,7 +120,7 @@ const obsSkills = observable({
     misc: 0
   },
   handleAnimal: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -147,7 +133,7 @@ const obsSkills = observable({
     misc: 0
   },
   heal: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -160,7 +146,7 @@ const obsSkills = observable({
     misc: 0
   },
   intimidate: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -172,23 +158,9 @@ const obsSkills = observable({
     trait: 0,
     misc: 0
   },
-  knowledge: [
-    {
-      classSkill: 0,
-      name: "",
-      description: "",
-      total: 0,
-      abilityModifierType: "",
-      abilityModifier: 0,
-      ranks: 0,
-      class: 0,
-      racial: 0,
-      trait: 0,
-      misc: 0
-    }
-  ],
+  knowledge: [],
   linguistics: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -201,7 +173,7 @@ const obsSkills = observable({
     misc: 0
   },
   perception: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -213,38 +185,10 @@ const obsSkills = observable({
     trait: 0,
     misc: 0
   },
-  perform: [
-    {
-      classSkill: 0,
-      name: "",
-      description: "",
-      total: 0,
-      abilityModifierType: "",
-      abilityModifier: 0,
-      ranks: 0,
-      class: 0,
-      racial: 0,
-      trait: 0,
-      misc: 0
-    }
-  ],
-  profession: [
-    {
-      classSkill: 0,
-      name: "",
-      description: "",
-      total: 0,
-      abilityModifierType: "",
-      abilityModifier: 0,
-      ranks: 0,
-      class: 0,
-      racial: 0,
-      trait: 0,
-      misc: 0
-    }
-  ],
+  perform: [],
+  profession: [],
   ride: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -257,7 +201,7 @@ const obsSkills = observable({
     misc: 0
   },
   senseMotive: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -270,7 +214,7 @@ const obsSkills = observable({
     misc: 0
   },
   sleightOfHand: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -283,7 +227,7 @@ const obsSkills = observable({
     misc: 0
   },
   spellcraft: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -296,7 +240,7 @@ const obsSkills = observable({
     misc: 0
   },
   stealth: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -309,7 +253,7 @@ const obsSkills = observable({
     misc: 0
   },
   survival: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -322,7 +266,7 @@ const obsSkills = observable({
     misc: 0
   },
   swim: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,
@@ -335,7 +279,7 @@ const obsSkills = observable({
     misc: 0
   },
   useMagicDevice: {
-    classSkill: 0,
+    classSkill: false,
     name: "",
     description: "",
     total: 0,

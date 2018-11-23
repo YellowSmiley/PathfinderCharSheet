@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsSpells from "./obsSpells";
 import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import ModalButton from "../Modal/ModalButton";
+import AddSpell from "./AddSpell";
 
 const Spells = observer(
   class Spells extends Component {
@@ -41,7 +43,7 @@ const Spells = observer(
               </div>
               <p>Spell</p>
               {mapArrayOfObjectsToInputs(obsSpells.spell, "Spell")}
-              {/*TODO: Add ability to add items to obsSpells.spell*/}
+              <ModalButton modalBtnText="Add Spell" modalBody={<AddSpell />} />
             </form>
           </div>
         </div>

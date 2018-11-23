@@ -23,16 +23,7 @@ const obsOffence = observable({
     miscModifier: 0,
     tempModifier: 0
   },
-  meleeAttacks: [
-    {
-      weapon: "",
-      attackBonus: 0,
-      damage: "",
-      critical: "",
-      type: "",
-      notes: ""
-    }
-  ]
+  meleeAttacks: []
 });
 
 export default obsOffence;
