@@ -10,23 +10,26 @@ function mapObjectsToSummaryInputs(name, obj, objIndex) {
   const objAsArray = Object.entries(obj);
   const obsSummaryAsArray = Object.entries(obsSummary);
   const handleChange = e => (obj[objAsArray[i][0]] = e.target.value);
-  const handleClick = e => (obsSummary[obsSummaryAsArray[i][0]] = false);
+  const handleClick = e => {
+    e.preventDefault();
+    obsSummary[obsSummaryAsArray[i][0]] = false;
+  };
+  // Iterate though all props of obj and find prop that is not hidden
+  // Could iterate through obj props and obsSummary for matching props and if false show
   for (var i = 0; i < objAsArray.length; i++) {
     if (i === objIndex) {
       return (
-        <>
-          <div
-            key={i}
-            className={
-              obsSummary[obsSummaryAsArray[objIndex][0]] ? "hidden" : null
-            }
-          >
+        <div
+          className={obsSummaryAsArray[objIndex][1] === true ? "hidden" : ""}
+          key={i}
+        >
+          <div>
             <label
               htmlFor={
                 String.toCamelCase(name) + String.capitalize(objAsArray[i][0])
               }
             >
-              {String.camelCaseToCapitalisedAndSpaced(objAsArray[i][0])}
+              {name}
             </label>
             <input
               id={
@@ -39,7 +42,7 @@ function mapObjectsToSummaryInputs(name, obj, objIndex) {
           <button type="submit" onClick={handleClick} className="">
             -
           </button>
-        </>
+        </div>
       );
     }
   }
@@ -58,6 +61,10 @@ const Summary = observer(
           <div className="wrapper">
             <form>
               {mapObjectsToSummaryInputs("HP Total", obsDefence.hp, 0)}
+              {mapObjectsToSummaryInputs("AC Total", obsDefence.armourClass, 0)}
+              {mapObjectsToSummaryInputs("Str Mod", obsAbilities.strength, 0)}
+              {mapObjectsToSummaryInputs("Dex Mod", obsAbilities.strength, 0)}
+              {mapObjectsToSummaryInputs("Dex Mod", obsAbilities.strength, 0)}
             </form>
           </div>
         </div>
