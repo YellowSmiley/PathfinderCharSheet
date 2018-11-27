@@ -2,40 +2,40 @@ import { observable } from "mobx";
 
 const obsAbilities = observable({
   strength: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   dexterity: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   constitution: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   intelligence: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   wisdom: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   charisma: {
-    abilityScore: 0,
-    abilityModifier: 0,
-    tempScore: 0,
-    tempModifier: 0
+    abilityScore: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    tempScore: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   }
 });
 

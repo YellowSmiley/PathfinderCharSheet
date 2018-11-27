@@ -42,8 +42,8 @@ function inputBuilder(array, obj, name) {
       </label>
       <input
         id={String.toCamelCase(name) + String.capitalize(item[0])}
-        value={item[1]}
-        onChange={e => (obj[item[0]] = e.target.value)}
+        value={item[1].value}
+        onChange={e => (obj[item[0]].value = e.target.value)}
       />
     </div>
   ));

@@ -6,23 +6,22 @@ import obsAbilities from "../Abilities/obsAbilities";
 import obsDefence from "../Defence/obsDefence";
 
 // objIndex must be the index of both obsSummary hidden value and the obj
-function mapObjectsToSummaryInputs(name, obj, objIndex) {
+function mapObjectsToSummaryInputs(name, obj) {
   const objAsArray = Object.entries(obj);
   const obsSummaryAsArray = Object.entries(obsSummary);
-  const handleChange = e => (obj[objAsArray[i][0]] = e.target.value);
+  const handleChange = e => (obj[objAsArray[i][0].value] = e.target.value);
   const handleClick = e => {
     e.preventDefault();
     obsSummary[obsSummaryAsArray[i][0]] = false;
   };
   // Iterate though all props of obj and find prop that is not hidden
   // Could iterate through obj props and obsSummary for matching props and if false show
+
+  // Iterating through all props of obj
   for (var i = 0; i < objAsArray.length; i++) {
-    if (i === objIndex) {
+    if (objAsArray[i][1].isHidden === false) {
       return (
-        <div
-          className={obsSummaryAsArray[objIndex][1] === true ? "hidden" : ""}
-          key={i}
-        >
+        <>
           <div>
             <label
               htmlFor={
@@ -42,7 +41,7 @@ function mapObjectsToSummaryInputs(name, obj, objIndex) {
           <button type="submit" onClick={handleClick} className="">
             -
           </button>
-        </div>
+        </>
       );
     }
   }
@@ -60,11 +59,11 @@ const Summary = observer(
           <div className="panel-header">Summary</div>
           <div className="wrapper">
             <form>
-              {mapObjectsToSummaryInputs("HP Total", obsDefence.hp, 0)}
-              {mapObjectsToSummaryInputs("AC Total", obsDefence.armourClass, 0)}
-              {mapObjectsToSummaryInputs("Str Mod", obsAbilities.strength, 0)}
-              {mapObjectsToSummaryInputs("Dex Mod", obsAbilities.strength, 0)}
-              {mapObjectsToSummaryInputs("Dex Mod", obsAbilities.strength, 0)}
+              {/*mapObjectsToSummaryInputs("HP Total", obsDefence.hp, 0)*/}
+              {/*mapObjectsToSummaryInputs("AC Total", obsDefence.armourClass, 0)*/}
+              {mapObjectsToSummaryInputs("Str Mod", obsAbilities.strength)}
+              {mapObjectsToSummaryInputs("Dex Mod", obsAbilities.dexterity)}
+              {mapObjectsToSummaryInputs("Con Mod", obsAbilities.constitution)}
             </form>
           </div>
         </div>
