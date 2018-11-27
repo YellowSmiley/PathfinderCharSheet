@@ -8,11 +8,10 @@ import obsDefence from "../Defence/obsDefence";
 // objIndex must be the index of both obsSummary hidden value and the obj
 function mapObjectsToSummaryInputs(name, obj) {
   const objAsArray = Object.entries(obj);
-  const obsSummaryAsArray = Object.entries(obsSummary);
-  const handleChange = e => (obj[objAsArray[i][0].value] = e.target.value);
+  const handleChange = e => (objAsArray[i][1].value = e.target.value);
   const handleClick = e => {
     e.preventDefault();
-    obsSummary[obsSummaryAsArray[i][0]] = false;
+    objAsArray[i][1].isHidden = true;
   };
   // Iterate though all props of obj and find prop that is not hidden
   // Could iterate through obj props and obsSummary for matching props and if false show
@@ -34,7 +33,7 @@ function mapObjectsToSummaryInputs(name, obj) {
               id={
                 String.toCamelCase(name) + String.capitalize(objAsArray[i][0])
               }
-              value={objAsArray[i][1]}
+              value={objAsArray[i][1].value}
               onChange={handleChange}
             />
           </div>
