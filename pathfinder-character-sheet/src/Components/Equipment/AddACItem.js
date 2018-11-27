@@ -13,7 +13,8 @@ class AddACItem extends Component {
       checkPenalty: 0,
       spellFailure: 0,
       weight: 0,
-      properties: ""
+      properties: "",
+      isHidden: true
     };
   }
 

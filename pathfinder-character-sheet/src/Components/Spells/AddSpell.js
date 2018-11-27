@@ -14,7 +14,8 @@ class AddSpell extends Component {
       perDay: 0,
       used: 0,
       notes: "",
-      description: ""
+      description: "",
+      isHidden: true
     };
   }
 

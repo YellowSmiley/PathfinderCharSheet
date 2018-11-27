@@ -8,7 +8,8 @@ class AddFeat extends Component {
     this.state = {
       name: "",
       type: "",
-      notes: ""
+      notes: "",
+      isHidden: true
     };
   }
 

@@ -2,26 +2,26 @@ import { observable } from "mobx";
 
 const obsOffence = observable({
   initiative: {
-    total: 0,
-    dexModifier: 0,
-    miscModifier: 0
+    total: { value: 0, isHidden: true },
+    dexModifier: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true }
   },
-  baseAttackBonus: 0,
-  conditionalModifiers: 0,
+  baseAttackBonus: { value: 0, isHidden: true },
+  conditionalModifiers: { value: 0, isHidden: true },
   speedLand: {
-    baseSpeed: 0,
-    withArmour: 0,
-    flyManoeuvrability: 0,
-    burrow: 0,
-    tempModifier: 0
+    baseSpeed: { value: 0, isHidden: true },
+    withArmour: { value: 0, isHidden: true },
+    flyManoeuvrability: { value: 0, isHidden: true },
+    burrow: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   combatManoeuvreBonus: {
-    total: 0,
-    baseAttackBonus: 0,
-    strModifier: 0,
-    sizeModifiers: 0,
-    miscModifier: 0,
-    tempModifier: 0
+    total: { value: 0, isHidden: true },
+    baseAttackBonus: { value: 0, isHidden: true },
+    strModifier: { value: 0, isHidden: true },
+    sizeModifiers: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   },
   meleeAttacks: []
 });

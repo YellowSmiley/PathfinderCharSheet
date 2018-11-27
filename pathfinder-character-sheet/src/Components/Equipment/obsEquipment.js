@@ -2,10 +2,10 @@ import { observable } from "mobx";
 
 const obsEquipment = observable({
   money: {
-    copper: 0,
-    silver: 0,
-    gold: 0,
-    platinum: 0
+    copper: { value: 0, isHidden: true },
+    silver: { value: 0, isHidden: true },
+    gold: { value: 0, isHidden: true },
+    platinum: { value: 0, isHidden: true }
   },
   acItem: [],
   gear: []

@@ -34,14 +34,26 @@ String.camelCaseToCapitalisedAndSpaced = function(str) {
   return finished;
 };
 
-function inputBuilder(array, obj, name) {
-  return array.map((item, i) => (
+export const stringNoWhiteSpace = str => {
+  return str.replace(/\s/g, "");
+};
+
+export function mapObjectToInputs(obj, name) {
+  return Object.entries(obj).map((item, i) => (
     <div key={i}>
-      <label htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}>
+      <label
+        htmlFor={
+          String.toCamelCase(stringNoWhiteSpace(name)) +
+          String.capitalize(item[0])
+        }
+      >
         {String.camelCaseToCapitalisedAndSpaced(item[0])}
       </label>
       <input
-        id={String.toCamelCase(name) + String.capitalize(item[0])}
+        id={
+          String.toCamelCase(stringNoWhiteSpace(name)) +
+          String.capitalize(item[0])
+        }
         value={item[1].value}
         onChange={e => (obj[item[0]].value = e.target.value)}
       />
@@ -49,22 +61,29 @@ function inputBuilder(array, obj, name) {
   ));
 }
 
-export const stringNoWhiteSpace = str => {
-  return str.replace(/\s/g, "");
-};
-
-export function mapObjectToInputs(obj, name) {
-  const inputs = inputBuilder(
-    Object.entries(obj),
-    obj,
-    stringNoWhiteSpace(name)
-  );
-  return inputs;
-}
-
 export function mapArrayOfObjectsToInputs(array, name) {
-  const inputs = array.map((item, i) =>
-    inputBuilder(Object.entries(array[i]), array[i], stringNoWhiteSpace(name))
+  /*TODO: Hide isHidden*/
+  const inputs = array.map((arrayItem, arrayIndex) =>
+    Object.entries(arrayItem).map((arrayItemItem, i) => (
+      <div key={i}>
+        <label
+          htmlFor={
+            String.toCamelCase(stringNoWhiteSpace(name)) +
+            String.capitalize(arrayItemItem[0])
+          }
+        >
+          {String.camelCaseToCapitalisedAndSpaced(arrayItemItem[0])}
+        </label>
+        <input
+          id={
+            String.toCamelCase(stringNoWhiteSpace(name)) +
+            String.capitalize(arrayItemItem[0])
+          }
+          value={arrayItemItem[1]}
+          onChange={e => (array[arrayIndex][arrayItemItem[0]] = e.target.value)}
+        />
+      </div>
+    ))
   );
   return inputs;
 }

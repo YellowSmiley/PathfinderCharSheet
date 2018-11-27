@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import { mapObjectToInputs } from "../../utils";
-import obsSummary from "./obsSummary";
-import obsAbilities from "../Abilities/obsAbilities";
-import obsDefence from "../Defence/obsDefence";
+import { mapObjectToInputs } from "../utils";
+import obsAbilities from "./Abilities/obsAbilities";
+import obsDefence from "./Defence/obsDefence";
 
 // objIndex must be the index of both obsSummary hidden value and the obj
 function mapObjectsToSummaryInputs(name, obj) {
+  /*TODO: Get working with array and test with Objects*/
   const objAsArray = Object.entries(obj);
   const handleChange = e => (objAsArray[i][1].value = e.target.value);
   const handleClick = e => {
     e.preventDefault();
     objAsArray[i][1].isHidden = true;
   };
-  // Iterate though all props of obj and find prop that is not hidden
-  // Could iterate through obj props and obsSummary for matching props and if false show
-
-  // Iterating through all props of obj
   for (var i = 0; i < objAsArray.length; i++) {
     if (objAsArray[i][1].isHidden === false) {
       return (

@@ -2,70 +2,70 @@ import { observable } from "mobx";
 
 const obsDefence = observable({
   armourClass: {
-    total: 0,
-    touch: 0,
-    otherModifiers: 0,
-    flatFooted: 0,
-    armourBonus: 0,
-    shieldBonus: 0,
-    dexModifier: 0,
-    sizeModifier: 0,
-    naturalArmor: 0,
-    deflection: 0,
-    miscModifier: 0
+    total: { value: 0, isHidden: true },
+    touch: { value: 0, isHidden: true },
+    otherModifiers: { value: 0, isHidden: true },
+    flatFooted: { value: 0, isHidden: true },
+    armourBonus: { value: 0, isHidden: true },
+    shieldBonus: { value: 0, isHidden: true },
+    dexModifier: { value: 0, isHidden: true },
+    sizeModifier: { value: 0, isHidden: true },
+    naturalArmor: { value: 0, isHidden: true },
+    deflection: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true }
   },
   hp: {
-    total: 0,
-    wounds: 0,
-    nonLethalDamage: 0
+    total: { value: 0, isHidden: true },
+    wounds: { value: 0, isHidden: true },
+    nonLethalDamage: { value: 0, isHidden: true }
   },
-  damageReduction: 0,
-  spellResistance: 0,
+  damageReduction: { value: 0, isHidden: true },
+  spellResistance: { value: 0, isHidden: true },
   fortitude: {
-    total: 0,
-    baseSave: 0,
-    abilityModifier: 0,
-    magicModifier: 0,
-    miscModifier: 0,
-    tempModifier: 0,
-    otherModifiers: 0
+    total: { value: 0, isHidden: true },
+    baseSave: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    magicModifier: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true },
+    otherModifiers: { value: 0, isHidden: true }
   },
   reflex: {
-    total: 0,
-    baseSave: 0,
-    abilityModifier: 0,
-    magicModifier: 0,
-    miscModifier: 0,
-    tempModifier: 0,
-    otherModifiers: 0
+    total: { value: 0, isHidden: true },
+    baseSave: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    magicModifier: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true },
+    otherModifiers: { value: 0, isHidden: true }
   },
   will: {
-    total: 0,
-    baseSave: 0,
-    abilityModifier: 0,
-    magicModifier: 0,
-    miscModifier: 0,
-    tempModifier: 0,
-    otherModifiers: 0
+    total: { value: 0, isHidden: true },
+    baseSave: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    magicModifier: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true },
+    otherModifiers: { value: 0, isHidden: true }
   },
   resist: {
-    total: 0,
-    baseSave: 0,
-    abilityModifier: 0,
-    magicModifier: 0,
-    miscModifier: 0,
-    tempModifier: 0,
-    otherModifiers: 0
+    total: { value: 0, isHidden: true },
+    baseSave: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: true },
+    magicModifier: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true },
+    otherModifiers: { value: 0, isHidden: true }
   },
-  immune: 0,
+  immune: { value: 0, isHidden: true },
   combatManoeuvreDefence: {
-    total: 0,
-    baseAttackBonus: 0,
-    strModifier: 0,
-    dexModifier: 0,
-    sizeModifiers: 0,
-    miscModifier: 0,
-    tempModifier: 0
+    total: { value: 0, isHidden: true },
+    baseAttackBonus: { value: 0, isHidden: true },
+    strModifier: { value: 0, isHidden: true },
+    dexModifier: { value: 0, isHidden: true },
+    sizeModifiers: { value: 0, isHidden: true },
+    miscModifier: { value: 0, isHidden: true },
+    tempModifier: { value: 0, isHidden: true }
   }
 });
 

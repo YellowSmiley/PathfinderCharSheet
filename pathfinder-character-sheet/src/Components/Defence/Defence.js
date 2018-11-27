@@ -19,16 +19,20 @@ const Defence = observer(
                 <label htmlFor="damageReduction">Damage Reduction</label>
                 <input
                   id="damageReduction"
-                  value={obsDefence.damageReduction}
-                  onChange={e => (obsDefence.damageReduction = e.target.value)}
+                  value={obsDefence.damageReduction.value}
+                  onChange={e =>
+                    (obsDefence.damageReduction.value = e.target.value)
+                  }
                 />
               </div>
               <div>
                 <label htmlFor="spellResistance">Spell Resistance</label>
                 <input
                   id="spellResistance"
-                  value={obsDefence.spellResistance}
-                  onChange={e => (obsDefence.spellResistance = e.target.value)}
+                  value={obsDefence.spellResistance.value}
+                  onChange={e =>
+                    (obsDefence.spellResistance.value = e.target.value)
+                  }
                 />
               </div>
               <p>Fortitude</p>
@@ -43,8 +47,8 @@ const Defence = observer(
                 <label htmlFor="immune">Immune</label>
                 <input
                   id="immune"
-                  value={obsDefence.immune}
-                  onChange={e => (obsDefence.immune = e.target.value)}
+                  value={obsDefence.immune.value}
+                  onChange={e => (obsDefence.immune.value = e.target.value)}
                 />
               </div>
               <p>Combat Manoeuvre Defence</p>

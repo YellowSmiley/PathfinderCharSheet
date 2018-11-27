@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Summary from "./Components/Summary/Summary";
+import Summary from "./Components/Summary";
 import General from "./Components/General/General";
 import Abilities from "./Components/Abilities/Abilities";
 import Defence from "./Components/Defence/Defence";

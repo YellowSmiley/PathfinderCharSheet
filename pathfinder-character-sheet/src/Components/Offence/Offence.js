@@ -19,8 +19,10 @@ const Offence = observer(
                 <label htmlFor="baseAttackBonus">Base Attack Bonus</label>
                 <input
                   id="baseAttackBonus"
-                  value={obsOffence.baseAttackBonus}
-                  onChange={e => (obsOffence.baseAttackBonus = e.target.value)}
+                  value={obsOffence.baseAttackBonus.value}
+                  onChange={e =>
+                    (obsOffence.baseAttackBonus.value = e.target.value)
+                  }
                 />
               </div>
               <div>
@@ -29,9 +31,9 @@ const Offence = observer(
                 </label>
                 <input
                   id="conditionalModifiers"
-                  value={obsOffence.conditionalModifiers}
+                  value={obsOffence.conditionalModifiers.value}
                   onChange={e =>
-                    (obsOffence.conditionalModifiers = e.target.value)
+                    (obsOffence.conditionalModifiers.value = e.target.value)
                   }
                 />
               </div>

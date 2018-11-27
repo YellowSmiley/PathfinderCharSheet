@@ -16,7 +16,8 @@ class AddSkill extends Component {
       class: 0,
       racial: 0,
       trait: 0,
-      misc: 0
+      misc: 0,
+      isHidden: true
     };
   }
 

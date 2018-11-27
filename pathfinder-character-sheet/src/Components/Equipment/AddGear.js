@@ -12,7 +12,8 @@ class AddGear extends Component {
       location: "",
       quantity: 0,
       weight: 0,
-      notes: ""
+      notes: "",
+      isHidden: true
     };
   }
 

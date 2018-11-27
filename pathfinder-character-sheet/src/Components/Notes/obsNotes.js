@@ -1,7 +1,7 @@
 import { observable } from "mobx";
 
 const obsNotes = observable({
-  notes: ""
+  notes: { value: "", isHidden: true }
 });
 
 export default obsNotes;
