@@ -13,7 +13,7 @@ class AddMeleeAttack extends Component {
       critical: "",
       type: "",
       notes: "",
-      isHidden: true
+      isHidden: false
     };
   }
 

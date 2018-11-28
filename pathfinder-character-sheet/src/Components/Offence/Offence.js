@@ -50,7 +50,7 @@ const Offence = observer(
                 "Melee Attacks"
               )}
               <ModalButton
-                modalBtnText="Add AC Item"
+                modalBtnText="Add Melee Attack"
                 modalBody={<AddMeleeAttack />}
               />
             </form>
