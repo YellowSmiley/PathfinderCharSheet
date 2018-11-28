@@ -4,7 +4,6 @@ import obsAbilities from "./Abilities/obsAbilities";
 import obsDefence from "./Defence/obsDefence";
 import obsOffence from "./Offence/obsOffence";
 
-// objIndex must be the index of both obsSummary hidden value and the obj
 function mapObjectsToSummaryInputs(name, obj) {
   const objAsArray = Object.entries(obj);
   const handleChange = e => (objAsArray[i][1].value = e.target.value);
@@ -63,7 +62,6 @@ function mapArrayOfObjectsToSummaryInputs(name, array) {
           </>
         ) : null;
       });
-
       const btn = (
         <button
           type="submit"
@@ -76,9 +74,7 @@ function mapArrayOfObjectsToSummaryInputs(name, array) {
           -
         </button>
       );
-
       inp.push(btn);
-
       return inp;
     } else {
       return null;

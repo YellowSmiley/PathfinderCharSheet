@@ -58,35 +58,38 @@ export function mapObjectToInputs(obj, name) {
         onChange={e => (obj[item[0]].value = e.target.value)}
       />
     </div>
+    /*TODO: Add "Add to summary btn" */
   ));
 }
 
 export function mapArrayOfObjectsToInputs(array, name) {
-  const inputs = array.map((arrayItem, arrayIndex) =>
-    Object.entries(arrayItem).map((arrayItemItem, i) =>
-      arrayItemItem[0] !== "isHidden" ? (
-        <div key={i}>
-          <label
-            htmlFor={
-              String.toCamelCase(stringNoWhiteSpace(name)) +
-              String.capitalize(arrayItemItem[0])
-            }
-          >
-            {String.camelCaseToCapitalisedAndSpaced(arrayItemItem[0])}
-          </label>
-          <input
-            id={
-              String.toCamelCase(stringNoWhiteSpace(name)) +
-              String.capitalize(arrayItemItem[0])
-            }
-            value={arrayItemItem[1]}
-            onChange={e =>
-              (array[arrayIndex][arrayItemItem[0]] = e.target.value)
-            }
-          />
-        </div>
-      ) : null
-    )
+  const inputs = array.map(
+    (arrayItem, arrayIndex) =>
+      Object.entries(arrayItem).map((arrayItemItem, i) =>
+        arrayItemItem[0] !== "isHidden" ? (
+          <div key={i}>
+            <label
+              htmlFor={
+                String.toCamelCase(stringNoWhiteSpace(name)) +
+                String.capitalize(arrayItemItem[0])
+              }
+            >
+              {String.camelCaseToCapitalisedAndSpaced(arrayItemItem[0])}
+            </label>
+            <input
+              id={
+                String.toCamelCase(stringNoWhiteSpace(name)) +
+                String.capitalize(arrayItemItem[0])
+              }
+              value={arrayItemItem[1]}
+              onChange={e =>
+                (array[arrayIndex][arrayItemItem[0]] = e.target.value)
+              }
+            />
+          </div>
+        ) : null
+      )
+    /*TODO: Add "Add to summary btn" */
   );
   return inputs;
 }
