@@ -31,7 +31,7 @@ const Feats = observer(
               <p>Traits</p>
               {mapArrayOfObjectsToInputs(obsFeats.traits, "Traits")}
               <ModalButton
-                modalBtnText="Add Mastered"
+                modalBtnText="Add Traits"
                 modalBody={<AddFeat array={obsFeats.traits} />}
               />
             </form>

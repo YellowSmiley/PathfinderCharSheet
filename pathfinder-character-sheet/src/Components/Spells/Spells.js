@@ -27,9 +27,9 @@ const Spells = observer(
                 </label>
                 <input
                   id="conditionalModifiers"
-                  value={obsSpells.conditionalModifiers}
+                  value={obsSpells.conditionalModifiers.value}
                   onChange={e =>
-                    (obsSpells.conditionalModifiers = e.target.value)
+                    (obsSpells.conditionalModifiers.value = e.target.value)
                   }
                 />
               </div>
@@ -37,8 +37,8 @@ const Spells = observer(
                 <label htmlFor="speciality">Speciality</label>
                 <input
                   id="speciality"
-                  value={obsSpells.speciality}
-                  onChange={e => (obsSpells.speciality = e.target.value)}
+                  value={obsSpells.speciality.value}
+                  onChange={e => (obsSpells.speciality.value = e.target.value)}
                 />
               </div>
               <p>Spell</p>

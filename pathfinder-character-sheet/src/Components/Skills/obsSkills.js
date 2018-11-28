@@ -2,7 +2,7 @@ import { observable } from "mobx";
 
 const obsSkills = observable({
   acrobatics: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -15,7 +15,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   appraise: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -28,7 +28,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   bluff: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -41,7 +41,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   climb: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -55,7 +55,7 @@ const obsSkills = observable({
   },
   craft: [],
   diplomacy: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -68,7 +68,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   disableDevice: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -81,7 +81,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   disguise: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -94,7 +94,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   escapeArtist: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -107,7 +107,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   fly: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -120,7 +120,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   handleAnimal: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -133,7 +133,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   heal: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -146,7 +146,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   intimidate: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -160,7 +160,7 @@ const obsSkills = observable({
   },
   knowledge: [],
   linguistics: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -173,7 +173,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   perception: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -188,7 +188,7 @@ const obsSkills = observable({
   perform: [],
   profession: [],
   ride: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -201,7 +201,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   senseMotive: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -214,7 +214,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   sleightOfHand: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -227,7 +227,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   spellcraft: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -240,7 +240,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   stealth: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -253,7 +253,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   survival: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -266,7 +266,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   swim: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },
@@ -279,7 +279,7 @@ const obsSkills = observable({
     misc: { value: 0, isHidden: true }
   },
   useMagicDevice: {
-    classSkill: false,
+    classSkill: { value: false, isHidden: true },
     name: { value: "", isHidden: true },
     description: { value: "", isHidden: true },
     total: { value: 0, isHidden: true },

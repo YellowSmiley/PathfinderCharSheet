@@ -83,7 +83,7 @@ const Skills = observer(
                 </label>
                 <input
                   id="conditionalModifiersAndOtherNotes"
-                  value={obsSkills.conditionalModifiersAndOtherNotes}
+                  value={obsSkills.conditionalModifiersAndOtherNotes.value}
                   onChange={e =>
                     (obsSkills.conditionalModifiersAndOtherNotes =
                       e.target.value)
@@ -94,7 +94,7 @@ const Skills = observer(
                 <label htmlFor="languages">Languages</label>
                 <input
                   id="languages"
-                  value={obsSkills.languages}
+                  value={obsSkills.languages.value}
                   onChange={e => (obsSkills.languages = e.target.value)}
                 />
               </div>
