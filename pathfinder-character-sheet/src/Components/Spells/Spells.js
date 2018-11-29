@@ -15,6 +15,7 @@ const Spells = observer(
         <div className="panel">
           <div className="panel-header">Spells</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="spells-form">
               <p>Spells Known</p>
               {mapObjectToInputsWithAddBtn(

@@ -6,10 +6,12 @@ import { mapObjectToInputsWithAddBtn } from "../../utils";
 const Defence = observer(
   class Defence extends Component {
     render() {
+      /*TODO: Sort layout */
       return (
         <div className="panel">
           <div className="panel-header">Defence</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="defence-form">
               <p>Armour Class</p>
               {mapObjectToInputsWithAddBtn(

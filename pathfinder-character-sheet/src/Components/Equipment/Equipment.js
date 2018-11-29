@@ -16,9 +16,12 @@ const Equipment = observer(
         <div className="panel">
           <div className="panel-header">Equipment</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="equipment-form">
               <p>Money</p>
               {mapObjectToInputsWithAddBtn(obsEquipment.money, "Armour Class")}
+            </form>
+            <form className="equipment-form">
               <p>AC Items</p>
               {mapArrayOfObjectsToInputsWithAddBtn(
                 obsEquipment.acItem,
@@ -28,6 +31,8 @@ const Equipment = observer(
                 modalBtnText="Add AC Item"
                 modalBody={<AddACItem />}
               />
+            </form>
+            <form className="equipment-form">
               <p>Gear</p>
               {mapArrayOfObjectsToInputsWithAddBtn(obsEquipment.gear, "Gear")}
               <ModalButton modalBtnText="Add Gear" modalBody={<AddGear />} />

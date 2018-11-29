@@ -63,16 +63,11 @@ button:focus {
   cursor: pointer;
 }
 
-.panel-header {
+button:disabled {
+  background-color: #c0631c;
   color: white;
-  text-align: center;
-  padding: 10px;
-  background-color: #ff8424;
-  font-weight: 700;
-}
-
-.wrapper {
-  background-color: white;
+  text-decoration: none;
+  cursor: not-allowed;
 }
 
 form {
@@ -80,6 +75,7 @@ form {
   padding: 10px;
   display: grid;
   grid-column-gap: 10px;
+  align-items: center;
 }
 
 form div {
@@ -92,12 +88,13 @@ form div label {
 }
 
 form div input {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 10px 0;
-  display: inline-block;
+  display: inline;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   box-sizing: border-box;
 }
 
@@ -109,6 +106,32 @@ form div textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.panel-header {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: #ff8424;
+  font-weight: 700;
+}
+
+.wrapper {
+  background-color: white;
+}
+
+.input-button {
+  display: inline;
+  padding: 13px;
+  margin-left: -1px;
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .mini-input {

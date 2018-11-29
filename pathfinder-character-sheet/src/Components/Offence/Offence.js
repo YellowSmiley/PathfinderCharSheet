@@ -11,10 +11,12 @@ import AddMeleeAttack from "./AddMeleeAttack";
 const Offence = observer(
   class Offence extends Component {
     render() {
+      /*TODO: Sort layout */
       return (
         <div className="panel">
           <div className="panel-header">Offence</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="offence-form">
               <p>Initiative</p>
               {mapObjectToInputsWithAddBtn(obsOffence.initiative, "Initiative")}

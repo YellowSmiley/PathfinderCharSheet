@@ -11,10 +11,12 @@ import AddSkill from "./AddSkill";
 const Skills = observer(
   class Skills extends Component {
     render() {
+      /* TODO: Sort out messy alignment and floating add skill btns */
       return (
         <div className="panel">
           <div className="panel-header">Skills</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="skills-form">
               <p>Acrobatics</p>
               {mapObjectToInputsWithAddBtn(obsSkills.acrobatics, "Acrobatics")}

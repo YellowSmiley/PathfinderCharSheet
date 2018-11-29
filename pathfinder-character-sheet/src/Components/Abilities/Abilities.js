@@ -6,10 +6,12 @@ import { mapObjectToInputsWithAddBtn } from "../../utils";
 const Abilities = observer(
   class Abilities extends Component {
     render() {
+      /*TODO: map corresponding values like totals of the other values */
       return (
         <div className="panel">
           <div className="panel-header">Abilities</div>
           <div className="wrapper">
+            <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="abilities-form">
               <p>Strength</p>
               {mapObjectToInputsWithAddBtn(obsAbilities.strength, "Strength")}

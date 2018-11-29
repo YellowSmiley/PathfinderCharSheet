@@ -17,10 +17,15 @@ import {
 const Summary = observer(
   class Summary extends Component {
     render() {
+      /* TODO: Add, you need to add items to summary, text when no items are shown and hide "use the..." text */
+      /* TODO: Create Panel component and remove panel code from all components */
+      /* TODO: Sort out floating input buttons on small inputs */
+      /* TODO: Maybe sort items into obs to break down inputs? */
       return (
         <div className="panel">
           <div className="panel-header">Summary</div>
           <div className="wrapper">
+            <p>Use the - buttons to remove the values to your Summary page!</p>
             <form className="summary-form">
               {mapObjectsToInputsWithRemoveBtn(
                 obsAbilities.strength,

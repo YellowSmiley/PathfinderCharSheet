@@ -24,9 +24,9 @@ const Notes = observer(
                     e.preventDefault();
                     obsNotes.notes.isHidden = false;
                   }}
-                  className=""
+                  disabled={!obsNotes.notes.isHidden}
                 >
-                  +
+                  Add Notes to Summary
                 </button>
               </div>
             </form>

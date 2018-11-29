@@ -58,18 +58,17 @@ export function mapObjectToInputsWithAddBtn(obj, name) {
           value={item[1].value}
           onChange={e => (obj[item[0]].value = e.target.value)}
         />
-        {item[1].isHidden === true ? (
-          <button
-            type="submit"
-            onClick={e => {
-              e.preventDefault();
-              item[1].isHidden = false;
-            }}
-            className=""
-          >
-            +
-          </button>
-        ) : null}
+        <button
+          type="submit"
+          onClick={e => {
+            e.preventDefault();
+            item[1].isHidden = false;
+          }}
+          className="input-button"
+          disabled={!item[1].isHidden}
+        >
+          +
+        </button>
       </div>
     </>
   ));
@@ -144,7 +143,7 @@ export function mapObjectsToInputsWithRemoveBtn(obj, name) {
                 e.preventDefault();
                 item[1].isHidden = true;
               }}
-              className=""
+              className="input-button"
             >
               -
             </button>

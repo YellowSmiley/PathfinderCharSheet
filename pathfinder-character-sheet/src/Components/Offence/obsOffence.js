@@ -2,7 +2,7 @@ import { observable } from "mobx";
 
 const obsOffence = observable({
   initiative: {
-    total: { value: 0, isHidden: true },
+    total: { value: 0, isHidden: false },
     dexModifier: { value: 0, isHidden: true },
     miscModifier: { value: 0, isHidden: true }
   },
