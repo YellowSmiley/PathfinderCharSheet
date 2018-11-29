@@ -50,7 +50,7 @@ const Modal = observer(
                 }}
                 className="close"
               >
-                &times;
+                &times;&nbsp;
               </button>
               {obsModal.body}
             </div>

@@ -25,7 +25,7 @@ class AddGear extends Component {
 
   render() {
     return (
-      <div className="panel">
+      <>
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
           <form className="modal-form">
@@ -88,7 +88,7 @@ class AddGear extends Component {
         >
           {obsModal.modalBtnText}
         </button>
-      </div>
+      </>
     );
   }
 }
