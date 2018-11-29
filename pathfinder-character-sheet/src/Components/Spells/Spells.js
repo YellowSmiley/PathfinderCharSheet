@@ -15,7 +15,7 @@ const Spells = observer(
         <div className="panel">
           <div className="panel-header">Spells</div>
           <div className="wrapper">
-            <form>
+            <form className="spells-form">
               <p>Spells Known</p>
               {mapObjectToInputsWithAddBtn(
                 obsSpells.spellsKnown,

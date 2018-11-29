@@ -12,7 +12,7 @@ const Feats = observer(
         <div className="panel">
           <div className="panel-header">Feats</div>
           <div className="wrapper">
-            <form>
+            <form className="feats-form">
               <p>Mastered</p>
               {mapArrayOfObjectsToInputsWithAddBtn(
                 obsFeats.mastered,

@@ -10,7 +10,7 @@ const Abilities = observer(
         <div className="panel">
           <div className="panel-header">Abilities</div>
           <div className="wrapper">
-            <form>
+            <form className="abilities-form">
               <p>Strength</p>
               {mapObjectToInputsWithAddBtn(obsAbilities.strength, "Strength")}
               <p>Dexterity</p>

@@ -46,10 +46,6 @@ footer nav ul li a {
   color: white;
 }
 
-.main-content {
-  padding: 10px;
-}
-
 .panel-header {
   color: white;
   text-align: center;
@@ -151,6 +147,10 @@ form div textarea {
   display: none;
 }
 
+.notes-form {
+  grid-template-columns: 1fr;
+}
+
 /* Large Devices */
 @media (min-width: 700px) {
   .main-content {
@@ -162,14 +162,53 @@ form div textarea {
     width: 90%;
     margin: 10px auto;
   }
-  form {
+  .abilities-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .defence-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .saving-throw-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .equipment-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .feats-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .general-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .offence-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .skills-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .spells-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .summary-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .modal-form {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 /* Small Devices */
 @media (max-width: 700px) {
-  form {
+  .abilities-form,
+  .defence-form,
+  .equipment-form,
+  .feats-form,
+  .general-form,
+  .offence-form,
+  .skills-form,
+  .spells-form,
+  .summary-form,
+  .modal-form {
     grid-template-columns: 1fr 1fr;
   }
   .panel {

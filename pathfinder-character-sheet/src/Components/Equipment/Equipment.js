@@ -16,7 +16,7 @@ const Equipment = observer(
         <div className="panel">
           <div className="panel-header">Equipment</div>
           <div className="wrapper">
-            <form>
+            <form className="equipment-form">
               <p>Money</p>
               {mapObjectToInputsWithAddBtn(obsEquipment.money, "Armour Class")}
               <p>AC Items</p>

@@ -45,7 +45,7 @@ class AddSkill extends Component {
       <div className="panel">
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form>
+          <form  className="modal-form">
           <div>
               <label htmlFor="classSkill">Class Skill</label>
               <input

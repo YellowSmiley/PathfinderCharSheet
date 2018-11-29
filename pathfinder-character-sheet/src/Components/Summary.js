@@ -21,7 +21,7 @@ const Summary = observer(
         <div className="panel">
           <div className="panel-header">Summary</div>
           <div className="wrapper">
-            <form>
+            <form className="summary-form">
               {mapObjectsToInputsWithRemoveBtn(
                 obsAbilities.strength,
                 "Strength"

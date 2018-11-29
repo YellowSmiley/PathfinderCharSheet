@@ -15,7 +15,7 @@ const Offence = observer(
         <div className="panel">
           <div className="panel-header">Offence</div>
           <div className="wrapper">
-            <form>
+            <form className="offence-form">
               <p>Initiative</p>
               {mapObjectToInputsWithAddBtn(obsOffence.initiative, "Initiative")}
               <div>

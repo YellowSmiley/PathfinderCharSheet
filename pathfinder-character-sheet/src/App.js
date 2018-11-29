@@ -19,18 +19,16 @@ class App extends Component {
       <Router>
         <div className="app">
           <header>Pathfinder Character Sheet</header>
-          <div className="main-content">
-            <Route exact path="/" component={Summary} />
-            <Route path="/general" component={General} />
-            <Route path="/abilities" component={Abilities} />
-            <Route path="/defence" component={Defence} />
-            <Route path="/offence" component={Offence} />
-            <Route path="/skills" component={Skills} />
-            <Route path="/feats" component={Feats} />
-            <Route path="/equipment" component={Equipment} />
-            <Route path="/spells" component={Spells} />
-            <Route path="/notes" component={Notes} />
-          </div>
+          <Route exact path="/" component={Summary} />
+          <Route path="/general" component={General} />
+          <Route path="/abilities" component={Abilities} />
+          <Route path="/defence" component={Defence} />
+          <Route path="/offence" component={Offence} />
+          <Route path="/skills" component={Skills} />
+          <Route path="/feats" component={Feats} />
+          <Route path="/equipment" component={Equipment} />
+          <Route path="/spells" component={Spells} />
+          <Route path="/notes" component={Notes} />
           <Modal />
           <footer>
             <nav>

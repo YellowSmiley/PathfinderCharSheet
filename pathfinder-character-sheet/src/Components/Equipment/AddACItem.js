@@ -29,7 +29,7 @@ class AddACItem extends Component {
       <div className="panel">
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form>
+          <form className="modal-form">
             <div>
               <label htmlFor="name">Name</label>
               <input

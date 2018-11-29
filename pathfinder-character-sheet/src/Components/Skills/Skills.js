@@ -15,7 +15,7 @@ const Skills = observer(
         <div className="panel">
           <div className="panel-header">Skills</div>
           <div className="wrapper">
-            <form>
+            <form className="skills-form">
               <p>Acrobatics</p>
               {mapObjectToInputsWithAddBtn(obsSkills.acrobatics, "Acrobatics")}
               <p>Appraise</p>
@@ -25,7 +25,11 @@ const Skills = observer(
               <p>Climb</p>
               {mapObjectToInputsWithAddBtn(obsSkills.climb, "Climb")}
               <p>Craft</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.craft, "Craft")}
+              {mapArrayOfObjectsToInputsWithAddBtn(obsSkills.craft, "Craft")}
+              <ModalButton
+                modalBtnText="Add Craft"
+                modalBody={<AddSkill array={obsSkills.craft} />}
+              />
               <p>Diplomacy</p>
               {mapObjectToInputsWithAddBtn(obsSkills.diplomacy, "Diplomacy")}
               <p>Disable Device</p>

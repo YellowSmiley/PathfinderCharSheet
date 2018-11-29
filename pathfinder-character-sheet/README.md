@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description
+
+Written by Mike Smith, a means of managing your pathfinder characters in a browser.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -10,12 +10,14 @@ const Defence = observer(
         <div className="panel">
           <div className="panel-header">Defence</div>
           <div className="wrapper">
-            <form>
+            <form className="defence-form">
               <p>Armour Class</p>
               {mapObjectToInputsWithAddBtn(
                 obsDefence.armourClass,
                 "Armour Class"
               )}
+            </form>
+            <form className="defence-form">
               <p>HP</p>
               {mapObjectToInputsWithAddBtn(obsDefence.hp, "HP")}
               <div>
@@ -58,6 +60,8 @@ const Defence = observer(
                   +
                 </button>
               </div>
+            </form>
+            <form className="saving-throw-form">
               <p>Fortitude</p>
               {mapObjectToInputsWithAddBtn(obsDefence.fortitude, "Fortitude")}
               <p>Reflex</p>
@@ -66,6 +70,8 @@ const Defence = observer(
               {mapObjectToInputsWithAddBtn(obsDefence.will, "Will")}
               <p>Resist</p>
               {mapObjectToInputsWithAddBtn(obsDefence.resist, "Resist")}
+            </form>
+            <form className="defence-form">
               <div>
                 <label htmlFor="immune">Immune</label>
                 <input

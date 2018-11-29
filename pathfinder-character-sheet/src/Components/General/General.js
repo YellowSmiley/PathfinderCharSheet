@@ -10,7 +10,9 @@ const General = observer(
         <div className="panel">
           <div className="panel-header">General</div>
           <div className="wrapper">
-            <form>{mapObjectToInputsWithAddBtn(obsGeneral, "General")}</form>
+            <form className="general-form">
+              {mapObjectToInputsWithAddBtn(obsGeneral, "General")}
+            </form>
           </div>
         </div>
       );
