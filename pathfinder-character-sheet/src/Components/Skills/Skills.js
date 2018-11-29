@@ -118,18 +118,38 @@ const Skills = observer(
                   id="conditionalModifiersAndOtherNotes"
                   value={obsSkills.conditionalModifiersAndOtherNotes.value}
                   onChange={e =>
-                    (obsSkills.conditionalModifiersAndOtherNotes =
+                    (obsSkills.conditionalModifiersAndOtherNotes.value =
                       e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsSkills.conditionalModifiersAndOtherNotes.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <div>
                 <label htmlFor="languages">Languages</label>
                 <input
                   id="languages"
                   value={obsSkills.languages.value}
-                  onChange={e => (obsSkills.languages = e.target.value)}
+                  onChange={e => (obsSkills.languages.value = e.target.value)}
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsSkills.languages.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <p>Experience Points</p>
               {mapObjectToInputsWithAddBtn(

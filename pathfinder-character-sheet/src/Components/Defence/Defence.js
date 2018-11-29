@@ -27,6 +27,16 @@ const Defence = observer(
                     (obsDefence.damageReduction.value = e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsDefence.damageReduction.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <div>
                 <label htmlFor="spellResistance">Spell Resistance</label>
@@ -37,6 +47,16 @@ const Defence = observer(
                     (obsDefence.spellResistance.value = e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsDefence.spellResistance.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <p>Fortitude</p>
               {mapObjectToInputsWithAddBtn(obsDefence.fortitude, "Fortitude")}
@@ -53,6 +73,16 @@ const Defence = observer(
                   value={obsDefence.immune.value}
                   onChange={e => (obsDefence.immune.value = e.target.value)}
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsDefence.immune.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <p>Combat Manoeuvre Defence</p>
               {mapObjectToInputsWithAddBtn(

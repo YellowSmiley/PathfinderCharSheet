@@ -44,6 +44,16 @@ const Spells = observer(
                     (obsSpells.conditionalModifiers.value = e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsSpells.conditionalModifiers.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <div>
                 <label htmlFor="speciality">Speciality</label>
@@ -52,6 +62,16 @@ const Spells = observer(
                   value={obsSpells.speciality.value}
                   onChange={e => (obsSpells.speciality.value = e.target.value)}
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsSpells.speciality.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <p>Spell</p>
               {mapArrayOfObjectsToInputsWithAddBtn(obsSpells.spell, "Spell")}

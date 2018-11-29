@@ -17,7 +17,6 @@ import {
 const Summary = observer(
   class Summary extends Component {
     render() {
-      /* TODO: Work out how to have a list of hidden objects and how to display the inputs of them */
       return (
         <div className="panel">
           <div className="panel-header">Summary</div>
@@ -59,6 +58,16 @@ const Summary = observer(
                       (obsDefence.damageReduction.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsDefence.damageReduction.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {obsDefence.spellResistance.isHidden === false ? (
@@ -71,6 +80,16 @@ const Summary = observer(
                       (obsDefence.spellResistance.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsDefence.spellResistance.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
@@ -88,6 +107,16 @@ const Summary = observer(
                     value={obsDefence.immune.value}
                     onChange={e => (obsDefence.immune.value = e.target.value)}
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsDefence.immune.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
@@ -128,6 +157,16 @@ const Summary = observer(
                     value={obsNotes.notes.value}
                     onChange={e => (obsNotes.notes.value = e.target.value)}
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsNotes.notes.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
@@ -144,6 +183,16 @@ const Summary = observer(
                       (obsOffence.baseAttackBonus.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsOffence.baseAttackBonus.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {obsOffence.conditionalModifiers.isHidden === false ? (
@@ -158,6 +207,16 @@ const Summary = observer(
                       (obsOffence.conditionalModifiers.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsOffence.conditionalModifiers.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
@@ -257,6 +316,16 @@ const Summary = observer(
                         e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSkills.conditionalModifiersAndOtherNotes.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {obsSkills.languages.isHidden === false ? (
@@ -265,8 +334,18 @@ const Summary = observer(
                   <input
                     id="languages"
                     value={obsSkills.languages.value}
-                    onChange={e => (obsSkills.languages = e.target.value)}
+                    onChange={e => (obsSkills.languages.value = e.target.value)}
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSkills.languages.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
@@ -298,6 +377,16 @@ const Summary = observer(
                       (obsSpells.conditionalModifiers.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSpells.conditionalModifiers.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {obsSpells.speciality.isHidden === false ? (
@@ -310,6 +399,16 @@ const Summary = observer(
                       (obsSpells.speciality.value = e.target.value)
                     }
                   />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSpells.speciality.isHidden = true;
+                    }}
+                    className=""
+                  >
+                    -
+                  </button>
                 </div>
               ) : null}
               {mapArrayOfObjectsToInputsWithRemoveBtn(obsSpells.spell, "Spell")}

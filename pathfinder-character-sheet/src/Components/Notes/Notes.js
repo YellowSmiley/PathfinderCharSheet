@@ -18,6 +18,16 @@ const Notes = observer(
                   value={obsNotes.notes.value}
                   onChange={e => (obsNotes.notes.value = e.target.value)}
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsNotes.notes.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
             </form>
           </div>

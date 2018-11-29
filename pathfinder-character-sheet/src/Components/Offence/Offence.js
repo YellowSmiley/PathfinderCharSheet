@@ -27,6 +27,16 @@ const Offence = observer(
                     (obsOffence.baseAttackBonus.value = e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsOffence.baseAttackBonus.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <div>
                 <label htmlFor="conditionalModifiers">
@@ -39,6 +49,16 @@ const Offence = observer(
                     (obsOffence.conditionalModifiers.value = e.target.value)
                   }
                 />
+                <button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    obsOffence.conditionalModifiers.isHidden = false;
+                  }}
+                  className=""
+                >
+                  +
+                </button>
               </div>
               <p>Speed (Land)</p>
               {mapObjectToInputsWithAddBtn(obsOffence.speedLand, "Speed Land")}
