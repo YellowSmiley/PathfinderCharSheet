@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsDefence from "./obsDefence";
-import { mapObjectToInputs } from "../../utils";
+import { mapObjectToInputsWithAddBtn } from "../../utils";
 
 const Defence = observer(
   class Defence extends Component {
@@ -12,9 +12,12 @@ const Defence = observer(
           <div className="wrapper">
             <form>
               <p>Armour Class</p>
-              {mapObjectToInputs(obsDefence.armourClass, "Armour Class")}
+              {mapObjectToInputsWithAddBtn(
+                obsDefence.armourClass,
+                "Armour Class"
+              )}
               <p>HP</p>
-              {mapObjectToInputs(obsDefence.hp, "HP")}
+              {mapObjectToInputsWithAddBtn(obsDefence.hp, "HP")}
               <div>
                 <label htmlFor="damageReduction">Damage Reduction</label>
                 <input
@@ -36,13 +39,13 @@ const Defence = observer(
                 />
               </div>
               <p>Fortitude</p>
-              {mapObjectToInputs(obsDefence.fortitude, "Fortitude")}
+              {mapObjectToInputsWithAddBtn(obsDefence.fortitude, "Fortitude")}
               <p>Reflex</p>
-              {mapObjectToInputs(obsDefence.reflex, "Reflex")}
+              {mapObjectToInputsWithAddBtn(obsDefence.reflex, "Reflex")}
               <p>Will</p>
-              {mapObjectToInputs(obsDefence.will, "Will")}
+              {mapObjectToInputsWithAddBtn(obsDefence.will, "Will")}
               <p>Resist</p>
-              {mapObjectToInputs(obsDefence.resist, "Resist")}
+              {mapObjectToInputsWithAddBtn(obsDefence.resist, "Resist")}
               <div>
                 <label htmlFor="immune">Immune</label>
                 <input
@@ -52,7 +55,7 @@ const Defence = observer(
                 />
               </div>
               <p>Combat Manoeuvre Defence</p>
-              {mapObjectToInputs(
+              {mapObjectToInputsWithAddBtn(
                 obsDefence.combatManoeuvreDefence,
                 "Combat Manoeuvre Defence"
               )}

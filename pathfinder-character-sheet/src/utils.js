@@ -38,59 +38,161 @@ export const stringNoWhiteSpace = str => {
   return str.replace(/\s/g, "");
 };
 
-export function mapObjectToInputs(obj, name) {
+export function mapObjectToInputsWithAddBtn(obj, name) {
   return Object.entries(obj).map((item, i) => (
-    <div key={i}>
-      <label
-        htmlFor={
-          String.toCamelCase(stringNoWhiteSpace(name)) +
-          String.capitalize(item[0])
-        }
+    <>
+      <div key={i}>
+        <label
+          htmlFor={
+            String.toCamelCase(stringNoWhiteSpace(name)) +
+            String.capitalize(item[0])
+          }
+        >
+          {String.camelCaseToCapitalisedAndSpaced(item[0])}
+        </label>
+        <input
+          id={
+            String.toCamelCase(stringNoWhiteSpace(name)) +
+            String.capitalize(item[0])
+          }
+          value={item[1].value}
+          onChange={e => (obj[item[0]].value = e.target.value)}
+        />
+      </div>
+      <button
+        type="submit"
+        onClick={e => {
+          e.preventDefault();
+          item[1].isHidden = false;
+        }}
+        className=""
       >
-        {String.camelCaseToCapitalisedAndSpaced(item[0])}
-      </label>
-      <input
-        id={
-          String.toCamelCase(stringNoWhiteSpace(name)) +
-          String.capitalize(item[0])
-        }
-        value={item[1].value}
-        onChange={e => (obj[item[0]].value = e.target.value)}
-      />
-    </div>
-    /*TODO: Add "Add to summary btn" */
+        +
+      </button>
+    </>
   ));
 }
 
-export function mapArrayOfObjectsToInputs(array, name) {
-  const inputs = array.map(
-    (arrayItem, arrayIndex) =>
-      Object.entries(arrayItem).map((arrayItemItem, i) =>
-        arrayItemItem[0] !== "isHidden" ? (
-          <div key={i}>
+export function mapArrayOfObjectsToInputsWithAddBtn(array, name) {
+  const inputs = array.map((arrayItem, arrayIndex) => {
+    let inp = Object.entries(arrayItem).map((arrayItemItem, i) =>
+      arrayItemItem[0] !== "isHidden" ? (
+        <div key={i}>
+          <label
+            htmlFor={
+              String.toCamelCase(stringNoWhiteSpace(name)) +
+              String.capitalize(arrayItemItem[0])
+            }
+          >
+            {String.camelCaseToCapitalisedAndSpaced(arrayItemItem[0])}
+          </label>
+          <input
+            id={
+              String.toCamelCase(stringNoWhiteSpace(name)) +
+              String.capitalize(arrayItemItem[0])
+            }
+            value={arrayItemItem[1]}
+            onChange={e =>
+              (array[arrayIndex][arrayItemItem[0]] = e.target.value)
+            }
+          />
+        </div>
+      ) : null
+    );
+    const btn = (
+      <button
+        type="submit"
+        onClick={e => {
+          e.preventDefault();
+          arrayItem.isHidden = false;
+        }}
+        className=""
+      >
+        +
+      </button>
+    );
+    inp.push(btn);
+    return inp;
+  });
+  return inputs;
+}
+
+export function mapObjectsToInputsWithRemoveBtn(obj, name) {
+  const objAsArray = Object.entries(obj);
+  const handleChange = e => (objAsArray[i][1].value = e.target.value);
+  const handleClick = e => {
+    e.preventDefault();
+    objAsArray[i][1].isHidden = true;
+  };
+  for (var i = 0; i < objAsArray.length; i++) {
+    if (objAsArray[i][1].isHidden === false) {
+      return (
+        <>
+          <div>
             <label
               htmlFor={
-                String.toCamelCase(stringNoWhiteSpace(name)) +
-                String.capitalize(arrayItemItem[0])
+                String.toCamelCase(name) + String.capitalize(objAsArray[i][0])
               }
             >
-              {String.camelCaseToCapitalisedAndSpaced(arrayItemItem[0])}
+              {name}
             </label>
             <input
               id={
-                String.toCamelCase(stringNoWhiteSpace(name)) +
-                String.capitalize(arrayItemItem[0])
+                String.toCamelCase(name) + String.capitalize(objAsArray[i][0])
               }
-              value={arrayItemItem[1]}
-              onChange={e =>
-                (array[arrayIndex][arrayItemItem[0]] = e.target.value)
-              }
+              value={objAsArray[i][1].value}
+              onChange={handleChange}
             />
           </div>
-        ) : null
-      )
-    /*TODO: Add "Add to summary btn" */
-  );
+          <button type="submit" onClick={handleClick} className="">
+            -
+          </button>
+        </>
+      );
+    }
+  }
+}
+
+export function mapArrayOfObjectsToInputsWithRemoveBtn(array, name) {
+  const inputs = array.map((obj, i) => {
+    /*TODO: Add titles for each */
+    if (array[i].isHidden === false) {
+      let inp = Object.entries(array[i]).map((item, index) => {
+        return item[0] !== "isHidden" ? (
+          <>
+            <div>
+              <label
+                htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
+              >
+                {String.camelCaseToCapitalisedAndSpaced(item[0])}
+              </label>
+              <input
+                id={String.toCamelCase(name) + String.capitalize(item[0])}
+                value={item[1]}
+                onChange={e => (item[1] = e.target.value)}
+              />
+            </div>
+          </>
+        ) : null;
+      });
+      const btn = (
+        <button
+          type="submit"
+          onClick={e => {
+            e.preventDefault();
+            array[i].isHidden = true;
+          }}
+          className=""
+        >
+          -
+        </button>
+      );
+      inp.push(btn);
+      return inp;
+    } else {
+      return null;
+    }
+  });
   return inputs;
 }
 

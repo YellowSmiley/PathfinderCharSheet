@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsSpells from "./obsSpells";
-import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import {
+  mapObjectToInputsWithAddBtn,
+  mapArrayOfObjectsToInputsWithAddBtn
+} from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddSpell from "./AddSpell";
 
@@ -14,13 +17,22 @@ const Spells = observer(
           <div className="wrapper">
             <form>
               <p>Spells Known</p>
-              {mapObjectToInputs(obsSpells.spellsKnown, "Spells Known")}
+              {mapObjectToInputsWithAddBtn(
+                obsSpells.spellsKnown,
+                "Spells Known"
+              )}
               <p>Spell DC</p>
-              {mapObjectToInputs(obsSpells.spellDc, "Spell DC")}
+              {mapObjectToInputsWithAddBtn(obsSpells.spellDc, "Spell DC")}
               <p>Spells Per Day</p>
-              {mapObjectToInputs(obsSpells.spellsPerDay, "Spells Per Day")}
+              {mapObjectToInputsWithAddBtn(
+                obsSpells.spellsPerDay,
+                "Spells Per Day"
+              )}
               <p>Bonus Spells</p>
-              {mapObjectToInputs(obsSpells.bonusSpells, "Bonus Spells")}
+              {mapObjectToInputsWithAddBtn(
+                obsSpells.bonusSpells,
+                "Bonus Spells"
+              )}
               <div>
                 <label htmlFor="conditionalModifiers">
                   Conditional Modifiers
@@ -42,7 +54,7 @@ const Spells = observer(
                 />
               </div>
               <p>Spell</p>
-              {mapArrayOfObjectsToInputs(obsSpells.spell, "Spell")}
+              {mapArrayOfObjectsToInputsWithAddBtn(obsSpells.spell, "Spell")}
               <ModalButton modalBtnText="Add Spell" modalBody={<AddSpell />} />
             </form>
           </div>

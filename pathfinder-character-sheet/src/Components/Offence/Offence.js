@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsOffence from "./obsOffence";
-import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import {
+  mapObjectToInputsWithAddBtn,
+  mapArrayOfObjectsToInputsWithAddBtn
+} from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddMeleeAttack from "./AddMeleeAttack";
 
@@ -14,7 +17,7 @@ const Offence = observer(
           <div className="wrapper">
             <form>
               <p>Initiative</p>
-              {mapObjectToInputs(obsOffence.initiative, "Initiative")}
+              {mapObjectToInputsWithAddBtn(obsOffence.initiative, "Initiative")}
               <div>
                 <label htmlFor="baseAttackBonus">Base Attack Bonus</label>
                 <input
@@ -38,14 +41,14 @@ const Offence = observer(
                 />
               </div>
               <p>Speed (Land)</p>
-              {mapObjectToInputs(obsOffence.speedLand, "Speed Land")}
+              {mapObjectToInputsWithAddBtn(obsOffence.speedLand, "Speed Land")}
               <p>Combat Manoeuvre Bonus</p>
-              {mapObjectToInputs(
+              {mapObjectToInputsWithAddBtn(
                 obsOffence.combatManoeuvreBonus,
                 "Combat Manoeuvre Bonus"
               )}
               <p>Melee Attacks</p>
-              {mapArrayOfObjectsToInputs(
+              {mapArrayOfObjectsToInputsWithAddBtn(
                 obsOffence.meleeAttacks,
                 "Melee Attacks"
               )}

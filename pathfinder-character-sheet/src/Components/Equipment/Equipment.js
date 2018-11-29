@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsEquipment from "./obsEquipment";
-import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import {
+  mapObjectToInputsWithAddBtn,
+  mapArrayOfObjectsToInputsWithAddBtn
+} from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddACItem from "./AddACItem";
 import AddGear from "./AddGear";
@@ -15,15 +18,18 @@ const Equipment = observer(
           <div className="wrapper">
             <form>
               <p>Money</p>
-              {mapObjectToInputs(obsEquipment.money, "Armour Class")}
+              {mapObjectToInputsWithAddBtn(obsEquipment.money, "Armour Class")}
               <p>AC Items</p>
-              {mapArrayOfObjectsToInputs(obsEquipment.acItem, "AC Items")}
+              {mapArrayOfObjectsToInputsWithAddBtn(
+                obsEquipment.acItem,
+                "AC Items"
+              )}
               <ModalButton
                 modalBtnText="Add AC Item"
                 modalBody={<AddACItem />}
               />
               <p>Gear</p>
-              {mapArrayOfObjectsToInputs(obsEquipment.gear, "Gear")}
+              {mapArrayOfObjectsToInputsWithAddBtn(obsEquipment.gear, "Gear")}
               <ModalButton modalBtnText="Add Gear" modalBody={<AddGear />} />
             </form>
           </div>

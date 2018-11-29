@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsGeneral from "./obsGeneral";
-import { mapObjectToInputs } from "../../utils";
+import { mapObjectToInputsWithAddBtn } from "../../utils";
 
 const General = observer(
   class General extends Component {
@@ -10,7 +10,7 @@ const General = observer(
         <div className="panel">
           <div className="panel-header">General</div>
           <div className="wrapper">
-            <form>{mapObjectToInputs(obsGeneral, "General")}</form>
+            <form>{mapObjectToInputsWithAddBtn(obsGeneral, "General")}</form>
           </div>
         </div>
       );

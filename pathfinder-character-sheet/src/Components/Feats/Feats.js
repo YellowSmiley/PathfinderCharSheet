@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsFeats from "./obsFeats";
-import { mapArrayOfObjectsToInputs } from "../../utils";
+import { mapArrayOfObjectsToInputsWithAddBtn } from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddFeat from "./AddFeat";
 
@@ -14,13 +14,16 @@ const Feats = observer(
           <div className="wrapper">
             <form>
               <p>Mastered</p>
-              {mapArrayOfObjectsToInputs(obsFeats.mastered, "Mastered")}
+              {mapArrayOfObjectsToInputsWithAddBtn(
+                obsFeats.mastered,
+                "Mastered"
+              )}
               <ModalButton
                 modalBtnText="Add Mastered"
                 modalBody={<AddFeat array={obsFeats.mastered} />}
               />
               <p>Special Abilities</p>
-              {mapArrayOfObjectsToInputs(
+              {mapArrayOfObjectsToInputsWithAddBtn(
                 obsFeats.specialAbilities,
                 "Special Abilities"
               )}
@@ -29,7 +32,7 @@ const Feats = observer(
                 modalBody={<AddFeat array={obsFeats.specialAbilities} />}
               />
               <p>Traits</p>
-              {mapArrayOfObjectsToInputs(obsFeats.traits, "Traits")}
+              {mapArrayOfObjectsToInputsWithAddBtn(obsFeats.traits, "Traits")}
               <ModalButton
                 modalBtnText="Add Traits"
                 modalBody={<AddFeat array={obsFeats.traits} />}

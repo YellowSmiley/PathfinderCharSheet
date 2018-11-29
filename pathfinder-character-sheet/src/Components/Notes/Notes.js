@@ -15,8 +15,8 @@ const Notes = observer(
                 <textarea
                   id="notes"
                   rows="4"
-                  value={obsNotes.notes}
-                  onChange={e => (obsNotes.notes = e.target.value)}
+                  value={obsNotes.notes.value}
+                  onChange={e => (obsNotes.notes.value = e.target.value)}
                 />
               </div>
             </form>

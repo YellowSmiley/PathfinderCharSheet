@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsAbilities from "./obsAbilities";
-import { mapObjectToInputs } from "../../utils";
+import { mapObjectToInputsWithAddBtn } from "../../utils";
 
 const Abilities = observer(
   class Abilities extends Component {
@@ -12,17 +12,23 @@ const Abilities = observer(
           <div className="wrapper">
             <form>
               <p>Strength</p>
-              {mapObjectToInputs(obsAbilities.strength, "Strength")}
+              {mapObjectToInputsWithAddBtn(obsAbilities.strength, "Strength")}
               <p>Dexterity</p>
-              {mapObjectToInputs(obsAbilities.dexterity, "Dexterity")}
+              {mapObjectToInputsWithAddBtn(obsAbilities.dexterity, "Dexterity")}
               <p>Constitution</p>
-              {mapObjectToInputs(obsAbilities.constitution, "Constitution")}
+              {mapObjectToInputsWithAddBtn(
+                obsAbilities.constitution,
+                "Constitution"
+              )}
               <p>Intelligence</p>
-              {mapObjectToInputs(obsAbilities.intelligence, "Intelligence")}
+              {mapObjectToInputsWithAddBtn(
+                obsAbilities.intelligence,
+                "Intelligence"
+              )}
               <p>Wisdom</p>
-              {mapObjectToInputs(obsAbilities.wisdom, "Wisdom")}
+              {mapObjectToInputsWithAddBtn(obsAbilities.wisdom, "Wisdom")}
               <p>Charisma</p>
-              {mapObjectToInputs(obsAbilities.charisma, "Charisma")}
+              {mapObjectToInputsWithAddBtn(obsAbilities.charisma, "Charisma")}
             </form>
           </div>
         </div>

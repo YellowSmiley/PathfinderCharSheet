@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import obsSkills from "./obsSkills";
-import { mapObjectToInputs, mapArrayOfObjectsToInputs } from "../../utils";
+import {
+  mapObjectToInputsWithAddBtn,
+  mapArrayOfObjectsToInputsWithAddBtn
+} from "../../utils";
 import ModalButton from "../Modal/ModalButton";
 import AddSkill from "./AddSkill";
 
@@ -14,69 +17,99 @@ const Skills = observer(
           <div className="wrapper">
             <form>
               <p>Acrobatics</p>
-              {mapObjectToInputs(obsSkills.acrobatics, "Acrobatics")}
+              {mapObjectToInputsWithAddBtn(obsSkills.acrobatics, "Acrobatics")}
               <p>Appraise</p>
-              {mapObjectToInputs(obsSkills.appraise, "Appraise")}
+              {mapObjectToInputsWithAddBtn(obsSkills.appraise, "Appraise")}
               <p>Bluff</p>
-              {mapObjectToInputs(obsSkills.bluff, "Bluff")}
+              {mapObjectToInputsWithAddBtn(obsSkills.bluff, "Bluff")}
               <p>Climb</p>
-              {mapObjectToInputs(obsSkills.climb, "Climb")}
+              {mapObjectToInputsWithAddBtn(obsSkills.climb, "Climb")}
               <p>Craft</p>
-              {mapObjectToInputs(obsSkills.craft, "Craft")}
+              {mapObjectToInputsWithAddBtn(obsSkills.craft, "Craft")}
               <p>Diplomacy</p>
-              {mapObjectToInputs(obsSkills.diplomacy, "Diplomacy")}
+              {mapObjectToInputsWithAddBtn(obsSkills.diplomacy, "Diplomacy")}
               <p>Disable Device</p>
-              {mapObjectToInputs(obsSkills.disableDevice, "Disable Device")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.disableDevice,
+                "Disable Device"
+              )}
               <p>Disguise</p>
-              {mapObjectToInputs(obsSkills.disguise, "Disguise")}
+              {mapObjectToInputsWithAddBtn(obsSkills.disguise, "Disguise")}
               <p>Escape Artist</p>
-              {mapObjectToInputs(obsSkills.escapeArtist, "Escape Artist")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.escapeArtist,
+                "Escape Artist"
+              )}
               <p>Fly</p>
-              {mapObjectToInputs(obsSkills.fly, "Fly")}
+              {mapObjectToInputsWithAddBtn(obsSkills.fly, "Fly")}
               <p>Handle Animal</p>
-              {mapObjectToInputs(obsSkills.handleAnimal, "Handle Animal")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.handleAnimal,
+                "Handle Animal"
+              )}
               <p>Heal</p>
-              {mapObjectToInputs(obsSkills.heal, "Heal")}
+              {mapObjectToInputsWithAddBtn(obsSkills.heal, "Heal")}
               <p>Intimidate</p>
-              {mapObjectToInputs(obsSkills.intimidate, "Intimidate")}
+              {mapObjectToInputsWithAddBtn(obsSkills.intimidate, "Intimidate")}
               <p>Knowledge</p>
-              {mapArrayOfObjectsToInputs(obsSkills.knowledge, "Knowledge")}
+              {mapArrayOfObjectsToInputsWithAddBtn(
+                obsSkills.knowledge,
+                "Knowledge"
+              )}
               <ModalButton
                 modalBtnText="Add Knowledge"
                 modalBody={<AddSkill array={obsSkills.knowledge} />}
               />
               <p>Linguistics</p>
-              {mapObjectToInputs(obsSkills.linguistics, "Linguistics")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.linguistics,
+                "Linguistics"
+              )}
               <p>Perception</p>
-              {mapObjectToInputs(obsSkills.perception, "Perception")}
+              {mapObjectToInputsWithAddBtn(obsSkills.perception, "Perception")}
               <p>Perform</p>
-              {mapArrayOfObjectsToInputs(obsSkills.perform, "Perform")}
+              {mapArrayOfObjectsToInputsWithAddBtn(
+                obsSkills.perform,
+                "Perform"
+              )}
               <ModalButton
                 modalBtnText="Add Perform"
                 modalBody={<AddSkill array={obsSkills.perform} />}
               />
               <p>Profession</p>
-              {mapArrayOfObjectsToInputs(obsSkills.profession, "Profession")}
+              {mapArrayOfObjectsToInputsWithAddBtn(
+                obsSkills.profession,
+                "Profession"
+              )}
               <ModalButton
                 modalBtnText="Add Profession"
                 modalBody={<AddSkill array={obsSkills.profession} />}
               />
               <p>Ride</p>
-              {mapObjectToInputs(obsSkills.ride, "Ride")}
+              {mapObjectToInputsWithAddBtn(obsSkills.ride, "Ride")}
               <p>Sense Motive</p>
-              {mapObjectToInputs(obsSkills.senseMotive, "Sense Motive")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.senseMotive,
+                "Sense Motive"
+              )}
               <p>Sleight Of Hand</p>
-              {mapObjectToInputs(obsSkills.sleightOfHand, "Sleight Of Hand")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.sleightOfHand,
+                "Sleight Of Hand"
+              )}
               <p>Spellcraft</p>
-              {mapObjectToInputs(obsSkills.spellcraft, "Spellcraft")}
+              {mapObjectToInputsWithAddBtn(obsSkills.spellcraft, "Spellcraft")}
               <p>Stealth</p>
-              {mapObjectToInputs(obsSkills.stealth, "Stealth")}
+              {mapObjectToInputsWithAddBtn(obsSkills.stealth, "Stealth")}
               <p>Survival</p>
-              {mapObjectToInputs(obsSkills.survival, "Survival")}
+              {mapObjectToInputsWithAddBtn(obsSkills.survival, "Survival")}
               <p>Swim</p>
-              {mapObjectToInputs(obsSkills.swim, "Swim")}
+              {mapObjectToInputsWithAddBtn(obsSkills.swim, "Swim")}
               <p>Use Magic Device</p>
-              {mapObjectToInputs(obsSkills.useMagicDevice, "Use Magic Device")}
+              {mapObjectToInputsWithAddBtn(
+                obsSkills.useMagicDevice,
+                "Use Magic Device"
+              )}
               <div>
                 <label htmlFor="conditionalModifiersAndOtherNotes">
                   Conditional Modifiers &amp; Other Notes
@@ -99,7 +132,7 @@ const Skills = observer(
                 />
               </div>
               <p>Experience Points</p>
-              {mapObjectToInputs(
+              {mapObjectToInputsWithAddBtn(
                 obsSkills.experiencePoints,
                 "Experience Points"
               )}
