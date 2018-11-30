@@ -21,19 +21,19 @@ const obsAbilities = observable({
   },
   intelligence: {
     abilityScore: { value: 0, isHidden: true },
-    abilityModifier: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
     tempScore: { value: 0, isHidden: true },
     tempModifier: { value: 0, isHidden: true }
   },
   wisdom: {
     abilityScore: { value: 0, isHidden: true },
-    abilityModifier: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
     tempScore: { value: 0, isHidden: true },
     tempModifier: { value: 0, isHidden: true }
   },
   charisma: {
     abilityScore: { value: 0, isHidden: true },
-    abilityModifier: { value: 0, isHidden: true },
+    abilityModifier: { value: 0, isHidden: false },
     tempScore: { value: 0, isHidden: true },
     tempModifier: { value: 0, isHidden: true }
   }

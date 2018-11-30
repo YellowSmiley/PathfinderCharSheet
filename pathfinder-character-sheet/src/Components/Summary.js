@@ -149,17 +149,29 @@ const Summary = observer(
                 obsEquipment.money,
                 "Armour Class"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsEquipment.acItem) ? "form-8-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsEquipment.acItem,
                 "AC Items"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsEquipment.gear) ? "form-7-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsEquipment.gear,
                 "Gear"
               )}
             </form>
             <form
-              className={ifAnyObjNotHidden(obsFeats) ? "form-6-col" : "hidden"}
+              className={ifAnyObjNotHidden(obsFeats) ? "form-4-col" : "hidden"}
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsFeats.mastered,
@@ -265,6 +277,12 @@ const Summary = observer(
                 obsOffence.combatManoeuvreBonus,
                 "Combat Manoeuvre Bonus"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-7-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsOffence.meleeAttacks,
                 "Melee Attacks"
@@ -280,7 +298,19 @@ const Summary = observer(
               {mapObjectsToInputsWithRemoveBtn(obsSkills.appraise, "Appraise")}
               {mapObjectsToInputsWithRemoveBtn(obsSkills.bluff, "Bluff")}
               {mapObjectsToInputsWithRemoveBtn(obsSkills.climb, "Climb")}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(obsSkills.craft, "Craft")}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsSkills.diplomacy,
                 "Diplomacy"
@@ -304,10 +334,22 @@ const Summary = observer(
                 obsSkills.intimidate,
                 "Intimidate"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsSkills.knowledge,
                 "Knowledge"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsSkills.linguistics,
                 "Linguistics"
@@ -316,6 +358,12 @@ const Summary = observer(
                 obsSkills.perception,
                 "Perception"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsSkills.perform,
                 "Perform"
@@ -324,6 +372,12 @@ const Summary = observer(
                 obsSkills.profession,
                 "Profession"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(obsSkills.ride, "Ride")}
               {mapObjectsToInputsWithRemoveBtn(
                 obsSkills.senseMotive,
@@ -457,6 +511,12 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsSpells.spell) ? "form-9-col" : "hidden"
+              }
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(obsSpells.spell, "Spell")}
             </form>
           </div>

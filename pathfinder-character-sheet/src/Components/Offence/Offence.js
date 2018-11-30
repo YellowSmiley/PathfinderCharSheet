@@ -77,7 +77,7 @@ const Offence = observer(
               )}
             </form>
             <p>Melee Attacks</p>
-            <form className="form-6-col">
+            <form className="form-7-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
                 obsOffence.meleeAttacks,
                 "Melee Attacks"
