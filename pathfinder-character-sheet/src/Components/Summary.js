@@ -11,7 +11,8 @@ import obsSkills from "./Skills/obsSkills";
 import obsSpells from "./Spells/obsSpells";
 import {
   mapObjectsToInputsWithRemoveBtn,
-  mapArrayOfObjectsToInputsWithRemoveBtn
+  mapArrayOfObjectsToInputsWithRemoveBtn,
+  ifAnyObjNotHidden
 } from "../utils";
 
 const Summary = observer(
@@ -19,14 +20,17 @@ const Summary = observer(
     render() {
       /* TODO: Add, you need to add items to summary, text when no items are shown and hide "use the..." text */
       /* TODO: Create Panel component and remove panel code from all components */
-      /* TODO: Sort out floating input buttons on small inputs */
-      /* TODO: Maybe sort items into obs to break down inputs? */
+      /* TODO: Entitle forms by obs */
       return (
         <div className="panel">
           <div className="panel-header">Summary</div>
           <div className="wrapper">
             <p>Use the - buttons to remove the values to your Summary page!</p>
-            <form className="form-6-col">
+            <form
+              className={
+                ifAnyObjNotHidden(obsAbilities) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsAbilities.strength,
                 "Strength"
@@ -48,6 +52,13 @@ const Summary = observer(
                 obsAbilities.charisma,
                 "Charisma"
               )}
+            </form>
+            <p>Defence</p>
+            <form
+              className={
+                ifAnyObjNotHidden(obsDefence) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsDefence.armourClass,
                 "Armour Class"
@@ -128,6 +139,12 @@ const Summary = observer(
                 obsDefence.combatManoeuvreDefence,
                 "Combat Manoeuvre Defence"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsEquipment) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsEquipment.money,
                 "Armour Class"
@@ -140,6 +157,10 @@ const Summary = observer(
                 obsEquipment.gear,
                 "Gear"
               )}
+            </form>
+            <form
+              className={ifAnyObjNotHidden(obsFeats) ? "form-6-col" : "hidden"}
+            >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
                 obsFeats.mastered,
                 "Mastered"
@@ -152,6 +173,12 @@ const Summary = observer(
                 obsFeats.traits,
                 "Traits"
               )}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsGeneral) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(obsGeneral, "General")}
               {obsNotes.notes.isHidden === false ? (
                 <div>
@@ -174,6 +201,12 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
+            </form>
+            <form
+              className={
+                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
+              }
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsOffence.initiative,
                 "Initiative"
@@ -236,6 +269,10 @@ const Summary = observer(
                 obsOffence.meleeAttacks,
                 "Melee Attacks"
               )}
+            </form>
+            <form
+              className={ifAnyObjNotHidden(obsSkills) ? "form-6-col" : "hidden"}
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsSkills.acrobatics,
                 "Acrobatics"
@@ -357,6 +394,10 @@ const Summary = observer(
                 obsSkills.experiencePoints,
                 "Experience Points"
               )}
+            </form>
+            <form
+              className={ifAnyObjNotHidden(obsSpells) ? "form-6-col" : "hidden"}
+            >
               {mapObjectsToInputsWithRemoveBtn(
                 obsSpells.spellsKnown,
                 "Spells Known"

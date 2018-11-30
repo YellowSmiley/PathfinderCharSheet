@@ -10,7 +10,7 @@ const obsSpells = observable({
     fifth: { value: 0, isHidden: true },
     sixth: { value: 0, isHidden: true },
     seventh: { value: 0, isHidden: true },
-    either: { value: 0, isHidden: true },
+    eighth: { value: 0, isHidden: true },
     ninth: { value: 0, isHidden: true }
   },
   spellDc: {
@@ -22,7 +22,7 @@ const obsSpells = observable({
     fifth: { value: 0, isHidden: true },
     sixth: { value: 0, isHidden: true },
     seventh: { value: 0, isHidden: true },
-    either: { value: 0, isHidden: true },
+    eighth: { value: 0, isHidden: true },
     ninth: { value: 0, isHidden: true }
   },
   spellsPerDay: {
@@ -34,7 +34,7 @@ const obsSpells = observable({
     fifth: { value: 0, isHidden: true },
     sixth: { value: 0, isHidden: true },
     seventh: { value: 0, isHidden: true },
-    either: { value: 0, isHidden: true },
+    eighth: { value: 0, isHidden: true },
     ninth: { value: 0, isHidden: true }
   },
   bonusSpells: {
@@ -46,7 +46,7 @@ const obsSpells = observable({
     fifth: { value: 0, isHidden: true },
     sixth: { value: 0, isHidden: true },
     seventh: { value: 0, isHidden: true },
-    either: { value: 0, isHidden: true },
+    eighth: { value: 0, isHidden: true },
     ninth: { value: 0, isHidden: true }
   },
   conditionalModifiers: { value: 0, isHidden: true },

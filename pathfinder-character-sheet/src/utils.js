@@ -210,3 +210,38 @@ export function addObjToArray(obj, array) {
   newArray.push(obj);
   array = newArray;
 }
+
+export function ifAnyObjNotHidden(obj) {
+  const objAsArray = Object.entries(obj);
+  for (let i = 0; i < objAsArray.length; i++) {
+    if (objAsArray[i][1].isHidden || objAsArray[i][1].isHidden === false) {
+      if (objAsArray[i][1].isHidden === false) {
+        return true;
+      }
+    } else {
+      const objAsArrayItemAsArray = Object.entries(objAsArray[i]);
+      for (let x = 0; x < objAsArrayItemAsArray.length; x++) {
+        if (
+          objAsArrayItemAsArray[x][1].isHidden ||
+          objAsArrayItemAsArray[x][1].isHidden === false
+        ) {
+          if (objAsArrayItemAsArray[x][1].isHidden === false) {
+            return true;
+          }
+        } else {
+          const objAsArrayItemAsArrayItemAsArray = Object.entries(
+            objAsArrayItemAsArray[1][1]
+          );
+          for (let a = 0; a < objAsArrayItemAsArrayItemAsArray.length; a++) {
+            if (
+              objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false ||
+              objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false
+            ) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+  }
+}
