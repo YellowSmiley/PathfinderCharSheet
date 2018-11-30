@@ -28,7 +28,7 @@ class AddGear extends Component {
       <>
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form className="modal-form">
+          <form className="form-6-col">
             <div>
               <label htmlFor="name">Name</label>
               <input
@@ -88,6 +88,7 @@ class AddGear extends Component {
         >
           {obsModal.modalBtnText}
         </button>
+        <span className="spacer" />
       </>
     );
   }

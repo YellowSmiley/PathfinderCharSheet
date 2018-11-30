@@ -15,36 +15,40 @@ const Feats = observer(
           <div className="panel-header">Feats</div>
           <div className="wrapper">
             <p>Use the + buttons to add the values to your Summary page!</p>
-            <form className="feats-form">
-              <p>Mastered</p>
+            <span className="spacer" />
+            <p>Mastered</p>
+            <form className="form-4-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
                 obsFeats.mastered,
                 "Mastered"
               )}
-              <ModalButton
-                modalBtnText="Add Mastered"
-                modalBody={<AddFeat array={obsFeats.mastered} />}
-              />
             </form>
-            <form className="feats-form">
-              <p>Special Abilities</p>
+            <ModalButton
+              modalBtnText="Add Mastered"
+              modalBody={<AddFeat array={obsFeats.mastered} />}
+            />
+            <span className="spacer" />
+            <p>Special Abilities</p>
+            <form className="form-4-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
                 obsFeats.specialAbilities,
                 "Special Abilities"
               )}
-              <ModalButton
-                modalBtnText="Add Special Abilities"
-                modalBody={<AddFeat array={obsFeats.specialAbilities} />}
-              />
             </form>
-            <form className="feats-form">
-              <p>Traits</p>
+            <ModalButton
+              modalBtnText="Add Special Abilities"
+              modalBody={<AddFeat array={obsFeats.specialAbilities} />}
+            />
+            <span className="spacer" />
+            <p>Traits</p>
+            <form className="form-4-col">
               {mapArrayOfObjectsToInputsWithAddBtn(obsFeats.traits, "Traits")}
-              <ModalButton
-                modalBtnText="Add Traits"
-                modalBody={<AddFeat array={obsFeats.traits} />}
-              />
             </form>
+            <ModalButton
+              modalBtnText="Add Traits"
+              modalBody={<AddFeat array={obsFeats.traits} />}
+            />
+            <span className="spacer" />
           </div>
         </div>
       );

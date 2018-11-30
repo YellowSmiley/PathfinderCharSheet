@@ -16,7 +16,7 @@ const Spells = observer(
           <div className="panel-header">Spells</div>
           <div className="wrapper">
             <p>Use the + buttons to add the values to your Summary page!</p>
-            <form className="spells-form">
+            <form className="form-11-col">
               <p>Spells Known</p>
               {mapObjectToInputsWithAddBtn(
                 obsSpells.spellsKnown,
@@ -34,50 +34,61 @@ const Spells = observer(
                 obsSpells.bonusSpells,
                 "Bonus Spells"
               )}
+            </form>
+            <form className="form-4-col">
               <div>
                 <label htmlFor="conditionalModifiers">
                   Conditional Modifiers
                 </label>
-                <input
-                  id="conditionalModifiers"
-                  value={obsSpells.conditionalModifiers.value}
-                  onChange={e =>
-                    (obsSpells.conditionalModifiers.value = e.target.value)
-                  }
-                />
-                <button
-                  type="submit"
-                  onClick={e => {
-                    e.preventDefault();
-                    obsSpells.conditionalModifiers.isHidden = false;
-                  }}
-                  className=""
-                >
-                  +
-                </button>
+                <div className="inline-input-button">
+                  <input
+                    id="conditionalModifiers"
+                    value={obsSpells.conditionalModifiers.value}
+                    onChange={e =>
+                      (obsSpells.conditionalModifiers.value = e.target.value)
+                    }
+                  />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSpells.conditionalModifiers.isHidden = false;
+                    }}
+                    className=""
+                  >
+                    +
+                  </button>
+                </div>
               </div>
               <div>
                 <label htmlFor="speciality">Speciality</label>
-                <input
-                  id="speciality"
-                  value={obsSpells.speciality.value}
-                  onChange={e => (obsSpells.speciality.value = e.target.value)}
-                />
-                <button
-                  type="submit"
-                  onClick={e => {
-                    e.preventDefault();
-                    obsSpells.speciality.isHidden = false;
-                  }}
-                  className=""
-                >
-                  +
-                </button>
+                <div className="inline-input-button">
+                  <input
+                    id="speciality"
+                    value={obsSpells.speciality.value}
+                    onChange={e =>
+                      (obsSpells.speciality.value = e.target.value)
+                    }
+                  />
+                  <button
+                    type="submit"
+                    onClick={e => {
+                      e.preventDefault();
+                      obsSpells.speciality.isHidden = false;
+                    }}
+                    className=""
+                  >
+                    +
+                  </button>
+                </div>
               </div>
-              <p>Spell</p>
-              {mapArrayOfObjectsToInputsWithAddBtn(obsSpells.spell, "Spell")}
-              <ModalButton modalBtnText="Add Spell" modalBody={<AddSpell />} />
             </form>
+            <p>Spell</p>
+            <form className="form-9-col">
+              {mapArrayOfObjectsToInputsWithAddBtn(obsSpells.spell, "Spell")}
+            </form>
+            <ModalButton modalBtnText="Add Spell" modalBody={<AddSpell />} />
+            <span className="spacer" />
           </div>
         </div>
       );

@@ -11,7 +11,7 @@ const General = observer(
           <div className="panel-header">General</div>
           <div className="wrapper">
             <p>Use the + buttons to add the values to your Summary page!</p>
-            <form className="general-form">
+            <form className="form-6-col">
               {mapObjectToInputsWithAddBtn(obsGeneral, "General")}
             </form>
           </div>

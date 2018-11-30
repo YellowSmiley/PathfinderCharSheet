@@ -9,7 +9,7 @@ const Notes = observer(
         <div className="panel">
           <div className="panel-header">Notes</div>
           <div className="wrapper">
-            <form className="abilities-notes">
+            <form className="form-1-col">
               <div>
                 <label htmlFor="notes">Notes</label>
                 <textarea

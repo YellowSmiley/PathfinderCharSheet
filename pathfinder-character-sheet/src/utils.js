@@ -50,25 +50,27 @@ export function mapObjectToInputsWithAddBtn(obj, name) {
         >
           {String.camelCaseToCapitalisedAndSpaced(item[0])}
         </label>
-        <input
-          id={
-            String.toCamelCase(stringNoWhiteSpace(name)) +
-            String.capitalize(item[0])
-          }
-          value={item[1].value}
-          onChange={e => (obj[item[0]].value = e.target.value)}
-        />
-        <button
-          type="submit"
-          onClick={e => {
-            e.preventDefault();
-            item[1].isHidden = false;
-          }}
-          className="input-button"
-          disabled={!item[1].isHidden}
-        >
-          +
-        </button>
+        <div className="inline-input-button">
+          <input
+            id={
+              String.toCamelCase(stringNoWhiteSpace(name)) +
+              String.capitalize(item[0])
+            }
+            value={item[1].value}
+            onChange={e => (obj[item[0]].value = e.target.value)}
+          />
+          <button
+            type="submit"
+            onClick={e => {
+              e.preventDefault();
+              item[1].isHidden = false;
+            }}
+            className="input-button"
+            disabled={!item[1].isHidden}
+          >
+            +
+          </button>
+        </div>
       </div>
     </>
   ));
@@ -132,21 +134,23 @@ export function mapObjectsToInputsWithRemoveBtn(obj, name) {
                 " " +
                 String.camelCaseToCapitalisedAndSpaced(item[0])}
             </label>
-            <input
-              id={String.toCamelCase(name) + String.capitalize(item[0])}
-              value={item[1].value}
-              onChange={e => (item[1].value = e.target.value)}
-            />
-            <button
-              type="submit"
-              onClick={e => {
-                e.preventDefault();
-                item[1].isHidden = true;
-              }}
-              className="input-button"
-            >
-              -
-            </button>
+            <div className="inline-input-button">
+              <input
+                id={String.toCamelCase(name) + String.capitalize(item[0])}
+                value={item[1].value}
+                onChange={e => (item[1].value = e.target.value)}
+              />
+              <button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  item[1].isHidden = true;
+                }}
+                className="input-button"
+              >
+                -
+              </button>
+            </div>
           </div>
         </>
       );

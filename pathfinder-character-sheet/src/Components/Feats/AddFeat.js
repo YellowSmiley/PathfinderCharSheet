@@ -28,10 +28,10 @@ class AddFeat extends Component {
     /* TODO: Can all these modal contents be made into one dynamic componet? */
     /* TODO: Make modal panel that fills width */
     return (
-      <div className="panel">
+      <>
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form className="modal-form">
+          <form className="form-6-col">
             <div>
               <label htmlFor="name">Name</label>
               <input
@@ -67,7 +67,8 @@ class AddFeat extends Component {
         >
           {obsModal.modalBtnText}
         </button>
-      </div>
+        <span className="spacer" />
+      </>
     );
   }
 }

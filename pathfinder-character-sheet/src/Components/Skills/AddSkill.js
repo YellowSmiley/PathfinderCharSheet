@@ -6,11 +6,11 @@ class AddSkill extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      classSkill: 0,
+      classSkill: false,
       name: "",
       description: "",
       total: 0,
-      abilityModifierType: "",
+      modifierType: "",
       abilityModifier: 0,
       ranks: 0,
       class: 0,
@@ -29,7 +29,7 @@ class AddSkill extends Component {
       name: "",
       description: "",
       total: 0,
-      abilityModifierType: "",
+      modifierType: "",
       abilityModifier: 0,
       ranks: 0,
       class: 0,
@@ -42,10 +42,10 @@ class AddSkill extends Component {
 
   render() {
     return (
-      <div className="panel">
+      <>
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form  className="modal-form">
+          <form  className="form-6-col">
           <div>
               <label htmlFor="classSkill">Class Skill</label>
               <input
@@ -79,11 +79,11 @@ class AddSkill extends Component {
               />
             </div>
             <div>
-              <label htmlFor="abilityModifierType">Ability Modifier Type</label>
+              <label htmlFor="modifierType">Ability Modifier Type</label>
               <input
-                id="abilityModifierType"
-                value={this.state.abilityModifierType}
-                onChange={e => this.setState({ abilityModifierType: e.target.value })}
+                id="modifierType"
+                value={this.state.modifierType}
+                onChange={e => this.setState({ modifierType: e.target.value })}
               />
             </div>
             <div>
@@ -145,7 +145,8 @@ class AddSkill extends Component {
         >
           {obsModal.modalBtnText}
         </button>
-      </div>
+        <span className="spacer" />
+      </>
     );
   }
 }

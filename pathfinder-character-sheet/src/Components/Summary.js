@@ -26,7 +26,7 @@ const Summary = observer(
           <div className="panel-header">Summary</div>
           <div className="wrapper">
             <p>Use the - buttons to remove the values to your Summary page!</p>
-            <form className="summary-form">
+            <form className="form-6-col">
               {mapObjectsToInputsWithRemoveBtn(
                 obsAbilities.strength,
                 "Strength"
@@ -243,7 +243,7 @@ const Summary = observer(
               {mapObjectsToInputsWithRemoveBtn(obsSkills.appraise, "Appraise")}
               {mapObjectsToInputsWithRemoveBtn(obsSkills.bluff, "Bluff")}
               {mapObjectsToInputsWithRemoveBtn(obsSkills.climb, "Climb")}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.craft, "Craft")}
+              {mapArrayOfObjectsToInputsWithRemoveBtn(obsSkills.craft, "Craft")}
               {mapObjectsToInputsWithRemoveBtn(
                 obsSkills.diplomacy,
                 "Diplomacy"

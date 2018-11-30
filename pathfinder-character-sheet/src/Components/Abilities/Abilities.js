@@ -12,7 +12,7 @@ const Abilities = observer(
           <div className="panel-header">Abilities</div>
           <div className="wrapper">
             <p>Use the + buttons to add the values to your Summary page!</p>
-            <form className="abilities-form">
+            <form className="form-5-col">
               <p>Strength</p>
               {mapObjectToInputsWithAddBtn(obsAbilities.strength, "Strength")}
               <p>Dexterity</p>

@@ -26,10 +26,10 @@ class AddACItem extends Component {
 
   render() {
     return (
-      <div className="panel">
+      <>
         <div className="panel-header">{obsModal.modalBtnText}</div>
         <div className="wrapper">
-          <form className="modal-form">
+          <form className="form-6-col">
             <div>
               <label htmlFor="name">Name</label>
               <input
@@ -97,7 +97,8 @@ class AddACItem extends Component {
         >
           {obsModal.modalBtnText}
         </button>
-      </div>
+        <span className="spacer" />
+      </>
     );
   }
 }
