@@ -157,46 +157,48 @@ export function mapObjectsToInputsWithRemoveBtn(obj, name) {
 }
 
 export function mapArrayOfObjectsToInputsWithRemoveBtn(array, name) {
-  const inputs = array.map((obj, i) => {
-    /*TODO: Add titles for each */
-    if (array[i].isHidden === false) {
-      let inp = Object.entries(array[i]).map((item, index) => {
-        return item[0] !== "isHidden" ? (
-          <div key={index}>
-            <label
-              htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
-            >
-              {String.capitalize(name) +
-                " " +
-                String.camelCaseToCapitalisedAndSpaced(item[0])}
-            </label>
-            <input
-              id={String.toCamelCase(name) + String.capitalize(item[0])}
-              value={item[1]}
-              onChange={e => (item[1] = e.target.value)}
-            />
-          </div>
-        ) : null;
-      });
-      const btn = (
-        <button
-          type="submit"
-          onClick={e => {
-            e.preventDefault();
-            array[i].isHidden = true;
-          }}
-          className=""
-        >
-          -
-        </button>
-      );
-      inp.push(btn);
-      return inp;
-    } else {
-      return null;
-    }
-  });
-  return inputs;
+  if (array) {
+    const inputs = array.map((obj, i) => {
+      /*TODO: Add titles for each */
+      if (array[i].isHidden === false) {
+        let inp = Object.entries(array[i]).map((item, index) => {
+          return item[0] !== "isHidden" ? (
+            <div key={i}>
+              <label
+                htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
+              >
+                {String.capitalize(name) +
+                  " " +
+                  String.camelCaseToCapitalisedAndSpaced(item[0])}
+              </label>
+              <input
+                id={String.toCamelCase(name) + String.capitalize(item[0])}
+                value={item[1]}
+                onChange={e => (item[1] = e.target.value)}
+              />
+            </div>
+          ) : null;
+        });
+        const btn = (
+          <button
+            type="submit"
+            onClick={e => {
+              e.preventDefault();
+              array[i].isHidden = true;
+            }}
+            className=""
+          >
+            -
+          </button>
+        );
+        inp.push(btn);
+        return inp;
+      } else {
+        return null;
+      }
+    });
+    return inputs;
+  }
 }
 
 export function addObjToArray(obj, array) {
@@ -206,32 +208,34 @@ export function addObjToArray(obj, array) {
 }
 
 export function ifAnyObjNotHidden(obj) {
-  const objAsArray = Object.entries(obj);
-  for (let i = 0; i < objAsArray.length; i++) {
-    if (objAsArray[i][1].isHidden || objAsArray[i][1].isHidden === false) {
-      if (objAsArray[i][1].isHidden === false) {
-        return true;
-      }
-    } else {
-      const objAsArrayItemAsArray = Object.entries(objAsArray[i]);
-      for (let x = 0; x < objAsArrayItemAsArray.length; x++) {
-        if (
-          objAsArrayItemAsArray[x][1].isHidden ||
-          objAsArrayItemAsArray[x][1].isHidden === false
-        ) {
-          if (objAsArrayItemAsArray[x][1].isHidden === false) {
-            return true;
-          }
-        } else {
-          const objAsArrayItemAsArrayItemAsArray = Object.entries(
-            objAsArrayItemAsArray[1][1]
-          );
-          for (let a = 0; a < objAsArrayItemAsArrayItemAsArray.length; a++) {
-            if (
-              objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false ||
-              objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false
-            ) {
+  if (obj) {
+    const objAsArray = Object.entries(obj);
+    for (let i = 0; i < objAsArray.length; i++) {
+      if (objAsArray[i][1].isHidden || objAsArray[i][1].isHidden === false) {
+        if (objAsArray[i][1].isHidden === false) {
+          return true;
+        }
+      } else {
+        const objAsArrayItemAsArray = Object.entries(objAsArray[i]);
+        for (let x = 0; x < objAsArrayItemAsArray.length; x++) {
+          if (
+            objAsArrayItemAsArray[x][1].isHidden ||
+            objAsArrayItemAsArray[x][1].isHidden === false
+          ) {
+            if (objAsArrayItemAsArray[x][1].isHidden === false) {
               return true;
+            }
+          } else {
+            const objAsArrayItemAsArrayItemAsArray = Object.entries(
+              objAsArrayItemAsArray[1][1]
+            );
+            for (let a = 0; a < objAsArrayItemAsArrayItemAsArray.length; a++) {
+              if (
+                objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false ||
+                objAsArrayItemAsArrayItemAsArray[a][1].isHidden === false
+              ) {
+                return true;
+              }
             }
           }
         }
