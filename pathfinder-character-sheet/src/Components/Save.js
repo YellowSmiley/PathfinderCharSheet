@@ -37,6 +37,7 @@ const Save = observer(
       }
     }
     render() {
+      //TODO: Save to DB instead of localStorage
       return (
         <button onClick={this.save} className="button-like-anchor">
           Save

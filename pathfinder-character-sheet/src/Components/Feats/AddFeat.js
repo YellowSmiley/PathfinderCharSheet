@@ -26,7 +26,6 @@ class AddFeat extends Component {
 
   render() {
     /* TODO: Can all these modal contents be made into one dynamic componet? */
-    /* TODO: Make modal panel that fills width */
     return (
       <>
         <div className="panel-header">{obsModal.modalBtnText}</div>

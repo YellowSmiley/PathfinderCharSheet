@@ -17,7 +17,6 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    /* TODO: Add save and load features based on who's logged in - Need to make an API and DB to store */
     /* TODO: Add login page or use oAuth like Google? */
     return (
       <Router>

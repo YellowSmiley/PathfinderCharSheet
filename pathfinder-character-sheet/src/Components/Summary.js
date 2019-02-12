@@ -20,7 +20,8 @@ const Summary = observer(
     render() {
       /* TODO: Add, you need to add items to summary, text when no items are shown and hide "use the..." text */
       /* TODO: Create Panel component and remove panel code from all components */
-      /* TODO: Entitle forms by obs */
+      /* TODO: Split and entitle forms by obs */
+      // Maybe add validation to inputs based on char creation rules
 
       const abilities = obsAbilities.abilities;
       const defence = obsDefence.defence;

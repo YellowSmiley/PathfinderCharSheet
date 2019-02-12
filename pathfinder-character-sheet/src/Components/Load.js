@@ -39,6 +39,7 @@ const Load = observer(
       }
     }
     render() {
+      //TODO: Load from DB instead of localStorage
       return (
         <button onClick={this.load} className="button-like-anchor">
           Load
