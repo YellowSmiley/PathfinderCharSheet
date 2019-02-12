@@ -40,39 +40,37 @@ export const stringNoWhiteSpace = str => {
 
 export function mapObjectToInputsWithAddBtn(obj, name) {
   return Object.entries(obj).map((item, i) => (
-    <>
-      <div key={i}>
-        <label
-          htmlFor={
+    <div key={i}>
+      <label
+        htmlFor={
+          String.toCamelCase(stringNoWhiteSpace(name)) +
+          String.capitalize(item[0])
+        }
+      >
+        {String.camelCaseToCapitalisedAndSpaced(item[0])}
+      </label>
+      <div className="inline-input-button">
+        <input
+          id={
             String.toCamelCase(stringNoWhiteSpace(name)) +
             String.capitalize(item[0])
           }
+          value={item[1].value}
+          onChange={e => (obj[item[0]].value = e.target.value)}
+        />
+        <button
+          type="submit"
+          onClick={e => {
+            e.preventDefault();
+            item[1].isHidden = false;
+          }}
+          className="input-button"
+          disabled={!item[1].isHidden}
         >
-          {String.camelCaseToCapitalisedAndSpaced(item[0])}
-        </label>
-        <div className="inline-input-button">
-          <input
-            id={
-              String.toCamelCase(stringNoWhiteSpace(name)) +
-              String.capitalize(item[0])
-            }
-            value={item[1].value}
-            onChange={e => (obj[item[0]].value = e.target.value)}
-          />
-          <button
-            type="submit"
-            onClick={e => {
-              e.preventDefault();
-              item[1].isHidden = false;
-            }}
-            className="input-button"
-            disabled={!item[1].isHidden}
-          >
-            +
-          </button>
-        </div>
+          +
+        </button>
       </div>
-    </>
+    </div>
   ));
 }
 
@@ -125,34 +123,32 @@ export function mapObjectsToInputsWithRemoveBtn(obj, name) {
   return Object.entries(obj).map((item, i) => {
     if (item[1].isHidden === false) {
       return (
-        <>
-          <div>
-            <label
-              htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
+        <div key={i}>
+          <label
+            htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
+          >
+            {String.capitalize(name) +
+              " " +
+              String.camelCaseToCapitalisedAndSpaced(item[0])}
+          </label>
+          <div className="inline-input-button">
+            <input
+              id={String.toCamelCase(name) + String.capitalize(item[0])}
+              value={item[1].value}
+              onChange={e => (item[1].value = e.target.value)}
+            />
+            <button
+              type="submit"
+              onClick={e => {
+                e.preventDefault();
+                item[1].isHidden = true;
+              }}
+              className="input-button"
             >
-              {String.capitalize(name) +
-                " " +
-                String.camelCaseToCapitalisedAndSpaced(item[0])}
-            </label>
-            <div className="inline-input-button">
-              <input
-                id={String.toCamelCase(name) + String.capitalize(item[0])}
-                value={item[1].value}
-                onChange={e => (item[1].value = e.target.value)}
-              />
-              <button
-                type="submit"
-                onClick={e => {
-                  e.preventDefault();
-                  item[1].isHidden = true;
-                }}
-                className="input-button"
-              >
-                -
-              </button>
-            </div>
+              -
+            </button>
           </div>
-        </>
+        </div>
       );
     } else {
       return null;
@@ -166,22 +162,20 @@ export function mapArrayOfObjectsToInputsWithRemoveBtn(array, name) {
     if (array[i].isHidden === false) {
       let inp = Object.entries(array[i]).map((item, index) => {
         return item[0] !== "isHidden" ? (
-          <>
-            <div>
-              <label
-                htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
-              >
-                {String.capitalize(name) +
-                  " " +
-                  String.camelCaseToCapitalisedAndSpaced(item[0])}
-              </label>
-              <input
-                id={String.toCamelCase(name) + String.capitalize(item[0])}
-                value={item[1]}
-                onChange={e => (item[1] = e.target.value)}
-              />
-            </div>
-          </>
+          <div key={index}>
+            <label
+              htmlFor={String.toCamelCase(name) + String.capitalize(item[0])}
+            >
+              {String.capitalize(name) +
+                " " +
+                String.camelCaseToCapitalisedAndSpaced(item[0])}
+            </label>
+            <input
+              id={String.toCamelCase(name) + String.capitalize(item[0])}
+              value={item[1]}
+              onChange={e => (item[1] = e.target.value)}
+            />
+          </div>
         ) : null;
       });
       const btn = (
