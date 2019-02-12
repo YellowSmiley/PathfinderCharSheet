@@ -19,7 +19,7 @@ class AddMeleeAttack extends Component {
 
   onAddClick(e) {
     e.preventDefault();
-    addObjToArray(this.state, obsOffence.meleeAttacks);
+    addObjToArray(this.state, obsOffence.offence.meleeAttacks);
     obsModal.show = !obsModal.show;
   }
 

@@ -12,6 +12,7 @@ const Offence = observer(
   class Offence extends Component {
     render() {
       /*TODO: Sort layout */
+      const offence = obsOffence.offence;
       return (
         <div className="panel">
           <div className="panel-header">Offence</div>
@@ -19,22 +20,22 @@ const Offence = observer(
             <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="form-6-col">
               <p>Initiative</p>
-              {mapObjectToInputsWithAddBtn(obsOffence.initiative, "Initiative")}
+              {mapObjectToInputsWithAddBtn(offence.initiative, "Initiative")}
               <div>
                 <label htmlFor="baseAttackBonus">Base Attack Bonus</label>
                 <div className="inline-input-button">
                   <input
                     id="baseAttackBonus"
-                    value={obsOffence.baseAttackBonus.value}
+                    value={offence.baseAttackBonus.value}
                     onChange={e =>
-                      (obsOffence.baseAttackBonus.value = e.target.value)
+                      (offence.baseAttackBonus.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsOffence.baseAttackBonus.isHidden = false;
+                      offence.baseAttackBonus.isHidden = false;
                     }}
                     className=""
                   >
@@ -49,16 +50,16 @@ const Offence = observer(
                 <div className="inline-input-button">
                   <input
                     id="conditionalModifiers"
-                    value={obsOffence.conditionalModifiers.value}
+                    value={offence.conditionalModifiers.value}
                     onChange={e =>
-                      (obsOffence.conditionalModifiers.value = e.target.value)
+                      (offence.conditionalModifiers.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsOffence.conditionalModifiers.isHidden = false;
+                      offence.conditionalModifiers.isHidden = false;
                     }}
                     className=""
                   >
@@ -67,19 +68,19 @@ const Offence = observer(
                 </div>
               </div>
               <p>Speed (Land)</p>
-              {mapObjectToInputsWithAddBtn(obsOffence.speedLand, "Speed Land")}
+              {mapObjectToInputsWithAddBtn(offence.speedLand, "Speed Land")}
             </form>
             <form className="form-7-col">
               <p>Combat Manoeuvre Bonus</p>
               {mapObjectToInputsWithAddBtn(
-                obsOffence.combatManoeuvreBonus,
+                offence.combatManoeuvreBonus,
                 "Combat Manoeuvre Bonus"
               )}
             </form>
             <p>Melee Attacks</p>
             <form className="form-7-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
-                obsOffence.meleeAttacks,
+                offence.meleeAttacks,
                 "Melee Attacks"
               )}
             </form>

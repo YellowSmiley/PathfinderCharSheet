@@ -11,6 +11,8 @@ import Equipment from "./Components/Equipment/Equipment";
 import Spells from "./Components/Spells/Spells";
 import Notes from "./Components/Notes/Notes";
 import Modal from "./Components/Modal/Modal";
+import Save from "./Components/Save";
+import Load from "./Components/Load";
 import "./App.css";
 
 class App extends Component {
@@ -64,6 +66,12 @@ class App extends Component {
                 </li>
                 <li>
                   <Link to="/notes">Notes</Link>
+                </li>
+                <li>
+                  <Save />
+                </li>
+                <li>
+                  <Load />
                 </li>
               </ul>
             </nav>

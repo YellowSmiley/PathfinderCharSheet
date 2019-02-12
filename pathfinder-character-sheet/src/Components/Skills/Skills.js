@@ -12,6 +12,7 @@ const Skills = observer(
   class Skills extends Component {
     render() {
       /* TODO: Sort out messy alignment and floating add skill btns */
+      const skills = obsSkills.skills;
       return (
         <div className="panel">
           <div className="panel-header">Skills</div>
@@ -19,116 +20,107 @@ const Skills = observer(
             <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="form-12-col">
               <p>Acrobatics</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.acrobatics, "Acrobatics")}
+              {mapObjectToInputsWithAddBtn(skills.acrobatics, "Acrobatics")}
               <p>Appraise</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.appraise, "Appraise")}
+              {mapObjectToInputsWithAddBtn(skills.appraise, "Appraise")}
               <p>Bluff</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.bluff, "Bluff")}
+              {mapObjectToInputsWithAddBtn(skills.bluff, "Bluff")}
               <p>Climb</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.climb, "Climb")}
+              {mapObjectToInputsWithAddBtn(skills.climb, "Climb")}
             </form>
             <p>Craft</p>
             <form className="form-12-col">
-              {mapArrayOfObjectsToInputsWithAddBtn(obsSkills.craft, "Craft")}
+              {mapArrayOfObjectsToInputsWithAddBtn(skills.craft, "Craft")}
             </form>
             <ModalButton
               modalBtnText="Add Craft"
-              modalBody={<AddSkill array={obsSkills.craft} />}
+              modalBody={<AddSkill array={skills.craft} />}
             />
             <form className="form-12-col">
               <p>Diplomacy</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.diplomacy, "Diplomacy")}
+              {mapObjectToInputsWithAddBtn(skills.diplomacy, "Diplomacy")}
               <p>Disable Device</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.disableDevice,
+                skills.disableDevice,
                 "Disable Device"
               )}
               <p>Disguise</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.disguise, "Disguise")}
+              {mapObjectToInputsWithAddBtn(skills.disguise, "Disguise")}
               <p>Escape Artist</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.escapeArtist,
+                skills.escapeArtist,
                 "Escape Artist"
               )}
               <p>Fly</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.fly, "Fly")}
+              {mapObjectToInputsWithAddBtn(skills.fly, "Fly")}
               <p>Handle Animal</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.handleAnimal,
+                skills.handleAnimal,
                 "Handle Animal"
               )}
               <p>Heal</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.heal, "Heal")}
+              {mapObjectToInputsWithAddBtn(skills.heal, "Heal")}
               <p>Intimidate</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.intimidate, "Intimidate")}
+              {mapObjectToInputsWithAddBtn(skills.intimidate, "Intimidate")}
             </form>
             <p>Knowledge</p>
             <form className="form-12-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
-                obsSkills.knowledge,
+                skills.knowledge,
                 "Knowledge"
               )}
             </form>
             <ModalButton
               modalBtnText="Add Knowledge"
-              modalBody={<AddSkill array={obsSkills.knowledge} />}
+              modalBody={<AddSkill array={skills.knowledge} />}
             />
             <form className="form-12-col">
               <p>Linguistics</p>
-              {mapObjectToInputsWithAddBtn(
-                obsSkills.linguistics,
-                "Linguistics"
-              )}
+              {mapObjectToInputsWithAddBtn(skills.linguistics, "Linguistics")}
               <p>Perception</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.perception, "Perception")}
+              {mapObjectToInputsWithAddBtn(skills.perception, "Perception")}
             </form>
             <p>Perform</p>
             <form className="form-12-col">
-              {mapArrayOfObjectsToInputsWithAddBtn(
-                obsSkills.perform,
-                "Perform"
-              )}
+              {mapArrayOfObjectsToInputsWithAddBtn(skills.perform, "Perform")}
             </form>
             <ModalButton
               modalBtnText="Add Perform"
-              modalBody={<AddSkill array={obsSkills.perform} />}
+              modalBody={<AddSkill array={skills.perform} />}
             />
             <span className="spacer" />
             <p>Profession</p>
             <form className="form-12-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
-                obsSkills.profession,
+                skills.profession,
                 "Profession"
               )}
             </form>
             <ModalButton
               modalBtnText="Add Profession"
-              modalBody={<AddSkill array={obsSkills.profession} />}
+              modalBody={<AddSkill array={skills.profession} />}
             />
             <form className="form-12-col">
               <p>Ride</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.ride, "Ride")}
+              {mapObjectToInputsWithAddBtn(skills.ride, "Ride")}
               <p>Sense Motive</p>
-              {mapObjectToInputsWithAddBtn(
-                obsSkills.senseMotive,
-                "Sense Motive"
-              )}
+              {mapObjectToInputsWithAddBtn(skills.senseMotive, "Sense Motive")}
               <p>Sleight Of Hand</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.sleightOfHand,
+                skills.sleightOfHand,
                 "Sleight Of Hand"
               )}
               <p>Spellcraft</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.spellcraft, "Spellcraft")}
+              {mapObjectToInputsWithAddBtn(skills.spellcraft, "Spellcraft")}
               <p>Stealth</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.stealth, "Stealth")}
+              {mapObjectToInputsWithAddBtn(skills.stealth, "Stealth")}
               <p>Survival</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.survival, "Survival")}
+              {mapObjectToInputsWithAddBtn(skills.survival, "Survival")}
               <p>Swim</p>
-              {mapObjectToInputsWithAddBtn(obsSkills.swim, "Swim")}
+              {mapObjectToInputsWithAddBtn(skills.swim, "Swim")}
               <p>Use Magic Device</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.useMagicDevice,
+                skills.useMagicDevice,
                 "Use Magic Device"
               )}
             </form>
@@ -140,9 +132,9 @@ const Skills = observer(
                 <div className="inline-input-button">
                   <input
                     id="conditionalModifiersAndOtherNotes"
-                    value={obsSkills.conditionalModifiersAndOtherNotes.value}
+                    value={skills.conditionalModifiersAndOtherNotes.value}
                     onChange={e =>
-                      (obsSkills.conditionalModifiersAndOtherNotes.value =
+                      (skills.conditionalModifiersAndOtherNotes.value =
                         e.target.value)
                     }
                   />
@@ -150,7 +142,7 @@ const Skills = observer(
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSkills.conditionalModifiersAndOtherNotes.isHidden = false;
+                      skills.conditionalModifiersAndOtherNotes.isHidden = false;
                     }}
                     className=""
                   >
@@ -163,14 +155,14 @@ const Skills = observer(
                 <div className="inline-input-button">
                   <input
                     id="languages"
-                    value={obsSkills.languages.value}
-                    onChange={e => (obsSkills.languages.value = e.target.value)}
+                    value={skills.languages.value}
+                    onChange={e => (skills.languages.value = e.target.value)}
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSkills.languages.isHidden = false;
+                      skills.languages.isHidden = false;
                     }}
                     className=""
                   >
@@ -182,7 +174,7 @@ const Skills = observer(
             <form className="form-5-col">
               <p>Experience Points</p>
               {mapObjectToInputsWithAddBtn(
-                obsSkills.experiencePoints,
+                skills.experiencePoints,
                 "Experience Points"
               )}
             </form>

@@ -19,7 +19,7 @@ class AddGear extends Component {
 
   onAddClick(e) {
     e.preventDefault();
-    addObjToArray(this.state, obsEquipment.gear);
+    addObjToArray(this.state, obsEquipment.equipment.gear);
     obsModal.show = !obsModal.show;
   }
 

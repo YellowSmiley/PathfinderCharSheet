@@ -7,6 +7,7 @@ const Abilities = observer(
   class Abilities extends Component {
     render() {
       /*TODO: map corresponding values like totals of the other values */
+      const abilities = obsAbilities.abilities;
       return (
         <div className="panel">
           <div className="panel-header">Abilities</div>
@@ -14,23 +15,23 @@ const Abilities = observer(
             <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="form-5-col">
               <p>Strength</p>
-              {mapObjectToInputsWithAddBtn(obsAbilities.strength, "Strength")}
+              {mapObjectToInputsWithAddBtn(abilities.strength, "Strength")}
               <p>Dexterity</p>
-              {mapObjectToInputsWithAddBtn(obsAbilities.dexterity, "Dexterity")}
+              {mapObjectToInputsWithAddBtn(abilities.dexterity, "Dexterity")}
               <p>Constitution</p>
               {mapObjectToInputsWithAddBtn(
-                obsAbilities.constitution,
+                abilities.constitution,
                 "Constitution"
               )}
               <p>Intelligence</p>
               {mapObjectToInputsWithAddBtn(
-                obsAbilities.intelligence,
+                abilities.intelligence,
                 "Intelligence"
               )}
               <p>Wisdom</p>
-              {mapObjectToInputsWithAddBtn(obsAbilities.wisdom, "Wisdom")}
+              {mapObjectToInputsWithAddBtn(abilities.wisdom, "Wisdom")}
               <p>Charisma</p>
-              {mapObjectToInputsWithAddBtn(obsAbilities.charisma, "Charisma")}
+              {mapObjectToInputsWithAddBtn(abilities.charisma, "Charisma")}
             </form>
           </div>
         </div>

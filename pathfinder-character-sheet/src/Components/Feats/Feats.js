@@ -10,6 +10,7 @@ const Feats = observer(
     render() {
       /* TODO: Add, you need to add items to feats, text when no feats are shown and hide "use the..." text */
       /* TODO: Sort out layouts of array added items so they look neat, maybe make their own panel or table? */
+      const feats = obsFeats.feats;
       return (
         <div className="panel">
           <div className="panel-header">Feats</div>
@@ -18,35 +19,32 @@ const Feats = observer(
             <span className="spacer" />
             <p>Mastered</p>
             <form className="form-4-col">
-              {mapArrayOfObjectsToInputsWithAddBtn(
-                obsFeats.mastered,
-                "Mastered"
-              )}
+              {mapArrayOfObjectsToInputsWithAddBtn(feats.mastered, "Mastered")}
             </form>
             <ModalButton
               modalBtnText="Add Mastered"
-              modalBody={<AddFeat array={obsFeats.mastered} />}
+              modalBody={<AddFeat array={feats.mastered} />}
             />
             <span className="spacer" />
             <p>Special Abilities</p>
             <form className="form-4-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
-                obsFeats.specialAbilities,
+                feats.specialAbilities,
                 "Special Abilities"
               )}
             </form>
             <ModalButton
               modalBtnText="Add Special Abilities"
-              modalBody={<AddFeat array={obsFeats.specialAbilities} />}
+              modalBody={<AddFeat array={feats.specialAbilities} />}
             />
             <span className="spacer" />
             <p>Traits</p>
             <form className="form-4-col">
-              {mapArrayOfObjectsToInputsWithAddBtn(obsFeats.traits, "Traits")}
+              {mapArrayOfObjectsToInputsWithAddBtn(feats.traits, "Traits")}
             </form>
             <ModalButton
               modalBtnText="Add Traits"
-              modalBody={<AddFeat array={obsFeats.traits} />}
+              modalBody={<AddFeat array={feats.traits} />}
             />
             <span className="spacer" />
           </div>

@@ -12,6 +12,7 @@ import AddGear from "./AddGear";
 const Equipment = observer(
   class Equipment extends Component {
     render() {
+      const equipment = obsEquipment.equipment;
       return (
         <div className="panel">
           <div className="panel-header">Equipment</div>
@@ -19,12 +20,12 @@ const Equipment = observer(
             <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="form-5-col">
               <p>Money</p>
-              {mapObjectToInputsWithAddBtn(obsEquipment.money, "Armour Class")}
+              {mapObjectToInputsWithAddBtn(equipment.money, "Armour Class")}
             </form>
             <p>AC Items</p>
             <form className="form-8-col">
               {mapArrayOfObjectsToInputsWithAddBtn(
-                obsEquipment.acItem,
+                equipment.acItem,
                 "AC Items"
               )}
             </form>
@@ -32,7 +33,7 @@ const Equipment = observer(
             <span className="spacer" />
             <p>Gear</p>
             <form className="form-7-col">
-              {mapArrayOfObjectsToInputsWithAddBtn(obsEquipment.gear, "Gear")}
+              {mapArrayOfObjectsToInputsWithAddBtn(equipment.gear, "Gear")}
             </form>
             <ModalButton modalBtnText="Add Gear" modalBody={<AddGear />} />
             <span className="spacer" />

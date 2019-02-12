@@ -21,7 +21,7 @@ class AddSpell extends Component {
 
   onAddClick(e) {
     e.preventDefault();
-    addObjToArray(this.state, obsSpells.spell);
+    addObjToArray(this.state, obsSpells.spells.spell);
     obsModal.show = !obsModal.show;
   }
 

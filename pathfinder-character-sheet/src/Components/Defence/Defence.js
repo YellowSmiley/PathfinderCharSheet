@@ -7,6 +7,7 @@ const Defence = observer(
   class Defence extends Component {
     render() {
       /*TODO: Sort layout */
+      const defence = obsDefence.defence;
       return (
         <div className="panel">
           <div className="panel-header">Defence</div>
@@ -14,29 +15,26 @@ const Defence = observer(
             <p>Use the + buttons to add the values to your Summary page!</p>
             <form className="form-12-col">
               <p>Armour Class</p>
-              {mapObjectToInputsWithAddBtn(
-                obsDefence.armourClass,
-                "Armour Class"
-              )}
+              {mapObjectToInputsWithAddBtn(defence.armourClass, "Armour Class")}
             </form>
             <form className="form-6-col">
               <p>HP</p>
-              {mapObjectToInputsWithAddBtn(obsDefence.hp, "HP")}
+              {mapObjectToInputsWithAddBtn(defence.hp, "HP")}
               <div>
                 <label htmlFor="damageReduction">Damage Reduction</label>
                 <div className="inline-input-button">
                   <input
                     id="damageReduction"
-                    value={obsDefence.damageReduction.value}
+                    value={defence.damageReduction.value}
                     onChange={e =>
-                      (obsDefence.damageReduction.value = e.target.value)
+                      (defence.damageReduction.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.damageReduction.isHidden = false;
+                      defence.damageReduction.isHidden = false;
                     }}
                     className=""
                   >
@@ -49,16 +47,16 @@ const Defence = observer(
                 <div className="inline-input-button">
                   <input
                     id="spellResistance"
-                    value={obsDefence.spellResistance.value}
+                    value={defence.spellResistance.value}
                     onChange={e =>
-                      (obsDefence.spellResistance.value = e.target.value)
+                      (defence.spellResistance.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.spellResistance.isHidden = false;
+                      defence.spellResistance.isHidden = false;
                     }}
                     className=""
                   >
@@ -69,16 +67,16 @@ const Defence = observer(
             </form>
             <form className="form-8-col">
               <p>Fortitude</p>
-              {mapObjectToInputsWithAddBtn(obsDefence.fortitude, "Fortitude")}
+              {mapObjectToInputsWithAddBtn(defence.fortitude, "Fortitude")}
               <p>Reflex</p>
-              {mapObjectToInputsWithAddBtn(obsDefence.reflex, "Reflex")}
+              {mapObjectToInputsWithAddBtn(defence.reflex, "Reflex")}
               <p>Will</p>
-              {mapObjectToInputsWithAddBtn(obsDefence.will, "Will")}
+              {mapObjectToInputsWithAddBtn(defence.will, "Will")}
               <p>Resist</p>
-              {mapObjectToInputsWithAddBtn(obsDefence.resist, "Resist")}
+              {mapObjectToInputsWithAddBtn(defence.resist, "Resist")}
               <p>Combat Manoeuvre Defence</p>
               {mapObjectToInputsWithAddBtn(
-                obsDefence.combatManoeuvreDefence,
+                defence.combatManoeuvreDefence,
                 "Combat Manoeuvre Defence"
               )}
             </form>
@@ -88,14 +86,14 @@ const Defence = observer(
                 <div className="inline-input-button">
                   <input
                     id="immune"
-                    value={obsDefence.immune.value}
-                    onChange={e => (obsDefence.immune.value = e.target.value)}
+                    value={defence.immune.value}
+                    onChange={e => (defence.immune.value = e.target.value)}
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.immune.isHidden = false;
+                      defence.immune.isHidden = false;
                     }}
                     className=""
                   >

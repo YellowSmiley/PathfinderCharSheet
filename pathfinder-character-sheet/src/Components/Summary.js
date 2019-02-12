@@ -21,64 +21,63 @@ const Summary = observer(
       /* TODO: Add, you need to add items to summary, text when no items are shown and hide "use the..." text */
       /* TODO: Create Panel component and remove panel code from all components */
       /* TODO: Entitle forms by obs */
+
+      const abilities = obsAbilities.abilities;
+      const defence = obsDefence.defence;
+      const equipment = obsEquipment.equipment;
+      const feats = obsFeats.feats;
+      const general = obsGeneral.general;
+      const offence = obsOffence.offence;
+      const skills = obsSkills.skills;
+      const spells = obsSpells.spells;
       return (
         <div className="panel">
           <div className="panel-header">Summary</div>
           <div className="wrapper">
             <p>Use the - buttons to remove the values to your Summary page!</p>
             <form
-              className={
-                ifAnyObjNotHidden(obsAbilities) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(abilities) ? "form-6-col" : "hidden"}
             >
+              {mapObjectsToInputsWithRemoveBtn(abilities.strength, "Strength")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsAbilities.strength,
-                "Strength"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsAbilities.dexterity,
+                abilities.dexterity,
                 "Dexterity"
               )}
               {mapObjectsToInputsWithRemoveBtn(
-                obsAbilities.constitution,
+                abilities.constitution,
                 "Constitution"
               )}
               {mapObjectsToInputsWithRemoveBtn(
-                obsAbilities.intelligence,
+                abilities.intelligence,
                 "Intelligence"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsAbilities.wisdom, "Wisdom")}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsAbilities.charisma,
-                "Charisma"
-              )}
+              {mapObjectsToInputsWithRemoveBtn(abilities.wisdom, "Wisdom")}
+              {mapObjectsToInputsWithRemoveBtn(abilities.charisma, "Charisma")}
             </form>
             <p>Defence</p>
             <form
-              className={
-                ifAnyObjNotHidden(obsDefence) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(defence) ? "form-6-col" : "hidden"}
             >
               {mapObjectsToInputsWithRemoveBtn(
-                obsDefence.armourClass,
+                defence.armourClass,
                 "Armour Class"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsDefence.hp, "HP")}
-              {obsDefence.damageReduction.isHidden === false ? (
+              {mapObjectsToInputsWithRemoveBtn(defence.hp, "HP")}
+              {defence.damageReduction.isHidden === false ? (
                 <div>
                   <label htmlFor="damageReduction">Damage Reduction</label>
                   <input
                     id="damageReduction"
-                    value={obsDefence.damageReduction.value}
+                    value={defence.damageReduction.value}
                     onChange={e =>
-                      (obsDefence.damageReduction.value = e.target.value)
+                      (defence.damageReduction.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.damageReduction.isHidden = true;
+                      defence.damageReduction.isHidden = true;
                     }}
                     className=""
                   >
@@ -86,21 +85,21 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
-              {obsDefence.spellResistance.isHidden === false ? (
+              {defence.spellResistance.isHidden === false ? (
                 <div>
                   <label htmlFor="spellResistance">Spell Resistance</label>
                   <input
                     id="spellResistance"
-                    value={obsDefence.spellResistance.value}
+                    value={defence.spellResistance.value}
                     onChange={e =>
-                      (obsDefence.spellResistance.value = e.target.value)
+                      (defence.spellResistance.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.spellResistance.isHidden = true;
+                      defence.spellResistance.isHidden = true;
                     }}
                     className=""
                   >
@@ -108,26 +107,23 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsDefence.fortitude,
-                "Fortitude"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(obsDefence.reflex, "Reflex")}
-              {mapObjectsToInputsWithRemoveBtn(obsDefence.will, "Will")}
-              {mapObjectsToInputsWithRemoveBtn(obsDefence.resist, "Resist")}
-              {obsDefence.immune.isHidden === false ? (
+              {mapObjectsToInputsWithRemoveBtn(defence.fortitude, "Fortitude")}
+              {mapObjectsToInputsWithRemoveBtn(defence.reflex, "Reflex")}
+              {mapObjectsToInputsWithRemoveBtn(defence.will, "Will")}
+              {mapObjectsToInputsWithRemoveBtn(defence.resist, "Resist")}
+              {defence.immune.isHidden === false ? (
                 <div>
                   <label htmlFor="immune">Immune</label>
                   <input
                     id="immune"
-                    value={obsDefence.immune.value}
-                    onChange={e => (obsDefence.immune.value = e.target.value)}
+                    value={defence.immune.value}
+                    onChange={e => (defence.immune.value = e.target.value)}
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsDefence.immune.isHidden = true;
+                      defence.immune.isHidden = true;
                     }}
                     className=""
                   >
@@ -136,62 +132,49 @@ const Summary = observer(
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
-                obsDefence.combatManoeuvreDefence,
+                defence.combatManoeuvreDefence,
                 "Combat Manoeuvre Defence"
               )}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsEquipment) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(equipment) ? "form-6-col" : "hidden"}
             >
-              {mapObjectsToInputsWithRemoveBtn(
-                obsEquipment.money,
-                "Armour Class"
-              )}
+              {mapObjectsToInputsWithRemoveBtn(equipment.money, "Armour Class")}
             </form>
             <form
               className={
-                ifAnyObjNotHidden(obsEquipment.acItem) ? "form-8-col" : "hidden"
+                ifAnyObjNotHidden(equipment.acItem) ? "form-8-col" : "hidden"
               }
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsEquipment.acItem,
+                equipment.acItem,
                 "AC Items"
               )}
             </form>
             <form
               className={
-                ifAnyObjNotHidden(obsEquipment.gear) ? "form-7-col" : "hidden"
+                ifAnyObjNotHidden(equipment.gear) ? "form-7-col" : "hidden"
               }
             >
-              {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsEquipment.gear,
-                "Gear"
-              )}
+              {mapArrayOfObjectsToInputsWithRemoveBtn(equipment.gear, "Gear")}
             </form>
             <form
-              className={ifAnyObjNotHidden(obsFeats) ? "form-4-col" : "hidden"}
+              className={ifAnyObjNotHidden(feats) ? "form-4-col" : "hidden"}
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsFeats.mastered,
+                feats.mastered,
                 "Mastered"
               )}
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsFeats.specialAbilities,
+                feats.specialAbilities,
                 "Special Abilities"
               )}
-              {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsFeats.traits,
-                "Traits"
-              )}
+              {mapArrayOfObjectsToInputsWithRemoveBtn(feats.traits, "Traits")}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsGeneral) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(general) ? "form-6-col" : "hidden"}
             >
-              {mapObjectsToInputsWithRemoveBtn(obsGeneral, "General")}
+              {mapObjectsToInputsWithRemoveBtn(general, "General")}
               {obsNotes.notes.isHidden === false ? (
                 <div>
                   <label htmlFor="notes">Notes</label>
@@ -215,29 +198,27 @@ const Summary = observer(
               ) : null}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-6-col" : "hidden"}
             >
               {mapObjectsToInputsWithRemoveBtn(
-                obsOffence.initiative,
+                offence.initiative,
                 "Initiative"
               )}
-              {obsOffence.baseAttackBonus.isHidden === false ? (
+              {offence.baseAttackBonus.isHidden === false ? (
                 <div>
                   <label htmlFor="baseAttackBonus">Base Attack Bonus</label>
                   <input
                     id="baseAttackBonus"
-                    value={obsOffence.baseAttackBonus.value}
+                    value={offence.baseAttackBonus.value}
                     onChange={e =>
-                      (obsOffence.baseAttackBonus.value = e.target.value)
+                      (offence.baseAttackBonus.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsOffence.baseAttackBonus.isHidden = true;
+                      offence.baseAttackBonus.isHidden = true;
                     }}
                     className=""
                   >
@@ -245,23 +226,23 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
-              {obsOffence.conditionalModifiers.isHidden === false ? (
+              {offence.conditionalModifiers.isHidden === false ? (
                 <div>
                   <label htmlFor="conditionalModifiers">
                     Conditional Modifiers
                   </label>
                   <input
                     id="conditionalModifiers"
-                    value={obsOffence.conditionalModifiers.value}
+                    value={offence.conditionalModifiers.value}
                     onChange={e =>
-                      (obsOffence.conditionalModifiers.value = e.target.value)
+                      (offence.conditionalModifiers.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsOffence.conditionalModifiers.isHidden = true;
+                      offence.conditionalModifiers.isHidden = true;
                     }}
                     className=""
                   >
@@ -269,146 +250,113 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
+              {mapObjectsToInputsWithRemoveBtn(offence.speedLand, "Speed Land")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsOffence.speedLand,
-                "Speed Land"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsOffence.combatManoeuvreBonus,
+                offence.combatManoeuvreBonus,
                 "Combat Manoeuvre Bonus"
               )}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-7-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-7-col" : "hidden"}
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsOffence.meleeAttacks,
+                offence.meleeAttacks,
                 "Melee Attacks"
               )}
             </form>
             <form
-              className={ifAnyObjNotHidden(obsSkills) ? "form-6-col" : "hidden"}
+              className={ifAnyObjNotHidden(skills) ? "form-6-col" : "hidden"}
             >
-              {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.acrobatics,
-                "Acrobatics"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.appraise, "Appraise")}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.bluff, "Bluff")}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.climb, "Climb")}
+              {mapObjectsToInputsWithRemoveBtn(skills.acrobatics, "Acrobatics")}
+              {mapObjectsToInputsWithRemoveBtn(skills.appraise, "Appraise")}
+              {mapObjectsToInputsWithRemoveBtn(skills.bluff, "Bluff")}
+              {mapObjectsToInputsWithRemoveBtn(skills.climb, "Climb")}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-12-col" : "hidden"}
             >
-              {mapArrayOfObjectsToInputsWithRemoveBtn(obsSkills.craft, "Craft")}
+              {mapArrayOfObjectsToInputsWithRemoveBtn(skills.craft, "Craft")}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-6-col" : "hidden"}
             >
+              {mapObjectsToInputsWithRemoveBtn(skills.diplomacy, "Diplomacy")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.diplomacy,
-                "Diplomacy"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.disableDevice,
+                skills.disableDevice,
                 "Disable Device"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.disguise, "Disguise")}
+              {mapObjectsToInputsWithRemoveBtn(skills.disguise, "Disguise")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.escapeArtist,
+                skills.escapeArtist,
                 "Escape Artist"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.fly, "Fly")}
+              {mapObjectsToInputsWithRemoveBtn(skills.fly, "Fly")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.handleAnimal,
+                skills.handleAnimal,
                 "Handle Animal"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.heal, "Heal")}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.intimidate,
-                "Intimidate"
-              )}
+              {mapObjectsToInputsWithRemoveBtn(skills.heal, "Heal")}
+              {mapObjectsToInputsWithRemoveBtn(skills.intimidate, "Intimidate")}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-12-col" : "hidden"}
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsSkills.knowledge,
+                skills.knowledge,
                 "Knowledge"
               )}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-6-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-6-col" : "hidden"}
             >
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.linguistics,
+                skills.linguistics,
                 "Linguistics"
               )}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.perception,
-                "Perception"
-              )}
+              {mapObjectsToInputsWithRemoveBtn(skills.perception, "Perception")}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-12-col" : "hidden"}
             >
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsSkills.perform,
+                skills.perform,
                 "Perform"
               )}
               {mapArrayOfObjectsToInputsWithRemoveBtn(
-                obsSkills.profession,
+                skills.profession,
                 "Profession"
               )}
             </form>
             <form
-              className={
-                ifAnyObjNotHidden(obsOffence) ? "form-12-col" : "hidden"
-              }
+              className={ifAnyObjNotHidden(offence) ? "form-12-col" : "hidden"}
             >
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.ride, "Ride")}
+              {mapObjectsToInputsWithRemoveBtn(skills.ride, "Ride")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.senseMotive,
+                skills.senseMotive,
                 "Sense Motive"
               )}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.sleightOfHand,
+                skills.sleightOfHand,
                 "Sleight Of Hand"
               )}
+              {mapObjectsToInputsWithRemoveBtn(skills.spellcraft, "Spellcraft")}
+              {mapObjectsToInputsWithRemoveBtn(skills.stealth, "Stealth")}
+              {mapObjectsToInputsWithRemoveBtn(skills.survival, "Survival")}
+              {mapObjectsToInputsWithRemoveBtn(skills.swim, "Swim")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.spellcraft,
-                "Spellcraft"
-              )}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.stealth, "Stealth")}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.survival, "Survival")}
-              {mapObjectsToInputsWithRemoveBtn(obsSkills.swim, "Swim")}
-              {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.useMagicDevice,
+                skills.useMagicDevice,
                 "Use Magic Device"
               )}
-              {obsSkills.conditionalModifiersAndOtherNotes.isHidden ===
-              false ? (
+              {skills.conditionalModifiersAndOtherNotes.isHidden === false ? (
                 <div>
                   <label htmlFor="conditionalModifiersAndOtherNotes">
                     Conditional Modifiers &amp; Other Notes
                   </label>
                   <input
                     id="conditionalModifiersAndOtherNotes"
-                    value={obsSkills.conditionalModifiersAndOtherNotes.value}
+                    value={skills.conditionalModifiersAndOtherNotes.value}
                     onChange={e =>
-                      (obsSkills.conditionalModifiersAndOtherNotes =
+                      (skills.conditionalModifiersAndOtherNotes =
                         e.target.value)
                     }
                   />
@@ -416,7 +364,7 @@ const Summary = observer(
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSkills.conditionalModifiersAndOtherNotes.isHidden = true;
+                      skills.conditionalModifiersAndOtherNotes.isHidden = true;
                     }}
                     className=""
                   >
@@ -424,19 +372,19 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
-              {obsSkills.languages.isHidden === false ? (
+              {skills.languages.isHidden === false ? (
                 <div>
                   <label htmlFor="languages">Languages</label>
                   <input
                     id="languages"
-                    value={obsSkills.languages.value}
-                    onChange={e => (obsSkills.languages.value = e.target.value)}
+                    value={skills.languages.value}
+                    onChange={e => (skills.languages.value = e.target.value)}
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSkills.languages.isHidden = true;
+                      skills.languages.isHidden = true;
                     }}
                     className=""
                   >
@@ -445,43 +393,43 @@ const Summary = observer(
                 </div>
               ) : null}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSkills.experiencePoints,
+                skills.experiencePoints,
                 "Experience Points"
               )}
             </form>
             <form
-              className={ifAnyObjNotHidden(obsSpells) ? "form-6-col" : "hidden"}
+              className={ifAnyObjNotHidden(spells) ? "form-6-col" : "hidden"}
             >
               {mapObjectsToInputsWithRemoveBtn(
-                obsSpells.spellsKnown,
+                spells.spellsKnown,
                 "Spells Known"
               )}
-              {mapObjectsToInputsWithRemoveBtn(obsSpells.spellDc, "Spell DC")}
+              {mapObjectsToInputsWithRemoveBtn(spells.spellDc, "Spell DC")}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSpells.spellsPerDay,
+                spells.spellsPerDay,
                 "Spells Per Day"
               )}
               {mapObjectsToInputsWithRemoveBtn(
-                obsSpells.bonusSpells,
+                spells.bonusSpells,
                 "Bonus Spells"
               )}
-              {obsSpells.conditionalModifiers.isHidden === false ? (
+              {spells.conditionalModifiers.isHidden === false ? (
                 <div>
                   <label htmlFor="conditionalModifiers">
                     Conditional Modifiers
                   </label>
                   <input
                     id="conditionalModifiers"
-                    value={obsSpells.conditionalModifiers.value}
+                    value={spells.conditionalModifiers.value}
                     onChange={e =>
-                      (obsSpells.conditionalModifiers.value = e.target.value)
+                      (spells.conditionalModifiers.value = e.target.value)
                     }
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSpells.conditionalModifiers.isHidden = true;
+                      spells.conditionalModifiers.isHidden = true;
                     }}
                     className=""
                   >
@@ -489,21 +437,19 @@ const Summary = observer(
                   </button>
                 </div>
               ) : null}
-              {obsSpells.speciality.isHidden === false ? (
+              {spells.speciality.isHidden === false ? (
                 <div>
                   <label htmlFor="speciality">Speciality</label>
                   <input
                     id="speciality"
-                    value={obsSpells.speciality.value}
-                    onChange={e =>
-                      (obsSpells.speciality.value = e.target.value)
-                    }
+                    value={spells.speciality.value}
+                    onChange={e => (spells.speciality.value = e.target.value)}
                   />
                   <button
                     type="submit"
                     onClick={e => {
                       e.preventDefault();
-                      obsSpells.speciality.isHidden = true;
+                      spells.speciality.isHidden = true;
                     }}
                     className=""
                   >
@@ -514,10 +460,10 @@ const Summary = observer(
             </form>
             <form
               className={
-                ifAnyObjNotHidden(obsSpells.spell) ? "form-9-col" : "hidden"
+                ifAnyObjNotHidden(spells.spell) ? "form-9-col" : "hidden"
               }
             >
-              {mapArrayOfObjectsToInputsWithRemoveBtn(obsSpells.spell, "Spell")}
+              {mapArrayOfObjectsToInputsWithRemoveBtn(spells.spell, "Spell")}
             </form>
           </div>
         </div>

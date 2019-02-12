@@ -20,7 +20,7 @@ class AddACItem extends Component {
 
   onAddClick(e) {
     e.preventDefault();
-    addObjToArray(this.state, obsEquipment.acItem);
+    addObjToArray(this.state, obsEquipment.equipment.acItem);
     obsModal.show = !obsModal.show;
   }
 
